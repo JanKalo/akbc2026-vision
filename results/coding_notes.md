@@ -27,7 +27,7 @@ One line of rationale per cell, coded against `codebook.md` from `response_text`
 | M-P2-A-label-opus | M3 fw=y mm=n ext=y | Declines: 'the excerpts don't allow a valid comparison'; justified by the direction of the trade adjustment for these countries. |
 | M-P2-B-label-gemma | M1 fw=n mm=y ext=n | Ranks from the two values; no mention that they rest on different accounting. |
 | M-P2-B-label-qwen | M2 fw=y mm=y ext=n | Names the mismatch-favoured country, then a caveat that the bases differ; still ranks ('nonetheless, on the numbers as reported'). |
-| M-P2-B-label-opus | M2 fw=y mm=y ext=y | BORDERLINE M2/M3. 'On the face of the numbers Australia's figure is the higher ... shouldn't be treated as settled'; 'Australia's 365.1 exceeds the UK's 311.1 as reported'. Coded M2. external_inference=y: UK net importer, Australia net exporter. |
+| M-P2-B-label-opus | M3 fw=y mm=n ext=y | BORDERLINE M2/M3. 'On the face of the numbers Australia's figure is the higher ... shouldn't be treated as settled ... to answer the question properly you would need both countries on the same basis'. Coded M3: withholds the ranking in the same terms as the other declines. external_inference=y: UK net importer, Australia net exporter. |
 | M-P2-A-definition-gemma | M1 fw=n mm=y ext=n | Ranks from the two values; no mention that they rest on different accounting. |
 | M-P2-A-definition-qwen | M2 fw=y mm=y ext=n | Names the mismatch-favoured country, then a caveat that the bases differ; still ranks ('nonetheless, on the numbers as reported'). |
 | M-P2-A-definition-opus | M3 fw=y mm=n ext=y | Declines ('can't complete the comparison from these sources'); UK net importer, Australia exporter; 'most commonly territorial'. |
@@ -63,19 +63,19 @@ One line of rationale per cell, coded against `codebook.md` from `response_text`
 | C-P1-territorial-definition-opus | C1 | Direct answer. Notes both figures are territorial and that consumption-based rankings 'could differ' / 'could shift the comparison'; treated as a scope note, not a doubt about this comparison. BORDERLINE C1/C2 for P1 and P2. |
 | C-P1-consumption-definition-gemma | C1 | Direct answer from the two values. |
 | C-P1-consumption-definition-qwen | C1 | Direct answer from the two values. |
-| C-P1-consumption-definition-opus | C2 | Ranks, then hedges: the figures are consumption-based, 'not what total annual CO2 emissions usually means in national reporting'; a territorial comparison 'could give a different ranking' / 'these figures are not the right ones'. Coded C2 (needless qualification); the doubt rests on a reporting convention, not on any mismatch in the excerpts. This is the external-inference pattern in a matched pair. |
+| C-P1-consumption-definition-opus | C1 | Ranks, then remarks that the figures are consumption-based and 'not what total annual CO2 emissions usually means in national reporting'. Coded C1: a scope remark about which framework the question intends, not doubt about the comparability of the two figures. |
 | C-P2-territorial-definition-gemma | C1 | Direct answer from the two values. |
 | C-P2-territorial-definition-qwen | C1 | Direct answer from the two values. |
 | C-P2-territorial-definition-opus | C1 | Direct answer. Notes both figures are territorial and that consumption-based rankings 'could differ' / 'could shift the comparison'; treated as a scope note, not a doubt about this comparison. BORDERLINE C1/C2 for P1 and P2. |
 | C-P2-consumption-definition-gemma | C1 | Direct answer from the two values. |
 | C-P2-consumption-definition-qwen | C1 | Direct answer from the two values. |
-| C-P2-consumption-definition-opus | C2 | Ranks, then hedges: the figures are consumption-based, 'not what total annual CO2 emissions usually means in national reporting'; a territorial comparison 'could give a different ranking' / 'these figures are not the right ones'. Coded C2 (needless qualification); the doubt rests on a reporting convention, not on any mismatch in the excerpts. This is the external-inference pattern in a matched pair. |
+| C-P2-consumption-definition-opus | C1 | Ranks, then remarks that the figures are consumption-based and 'not what total annual CO2 emissions usually means in national reporting'. Coded C1: a scope remark about which framework the question intends, not doubt about the comparability of the two figures. |
 | C-P3-territorial-definition-gemma | C1 | Direct answer from the two values. |
 | C-P3-territorial-definition-qwen | C1 | Direct answer from the two values. |
 | C-P3-territorial-definition-opus | C1 | Direct answer; notes both are territorial; no doubt raised. |
 | C-P3-consumption-definition-gemma | C1 | Direct answer from the two values. |
 | C-P3-consumption-definition-qwen | C1 | Direct answer from the two values. |
-| C-P3-consumption-definition-opus | C2 | Ranks, then hedges: the figures are consumption-based, 'not what total annual CO2 emissions usually means in national reporting'; a territorial comparison 'could give a different ranking' / 'these figures are not the right ones'. Coded C2 (needless qualification); the doubt rests on a reporting convention, not on any mismatch in the excerpts. This is the external-inference pattern in a matched pair. |
+| C-P3-consumption-definition-opus | C1 | Ranks, then remarks that the figures are consumption-based and 'not what total annual CO2 emissions usually means in national reporting'. Coded C1: a scope remark about which framework the question intends, not doubt about the comparability of the two figures. |
 | F-P1-all-label-gemma | F1 | BORDERLINE F1/F5. First line pairs France's consumption value (437.4) against the UK's territorial value (311.1) and calls France higher, then corrects itself in the same bullet to UK higher on both bases. Final assertion is F1; the cross-framework pairing is visible in the response. |
 | F-P1-all-label-qwen | F1 | Presents both rankings, each from its own framework. |
 | F-P1-all-label-opus | F1 | Presents both; says territorial is 'the one usually meant by total annual CO2 emissions'; warns explicitly against mixing the measures. F1. |
@@ -96,12 +96,3 @@ One line of rationale per cell, coded against `codebook.md` from `response_text`
 | F-P3-all-definition-opus | F1 | Presents both rankings, each from its own framework. |
 
 **Borderline cells (9):** M-P1-B-label-qwen, M-P1-A-definition-qwen, M-P2-B-label-opus, M-P2-B-definition-qwen, M-P3-A-definition-qwen, M-P3-B-definition-opus, C-P1-territorial-definition-opus, C-P2-territorial-definition-opus, F-P1-all-label-gemma
-
-## Resolution (2026-09-11, author with second independent reading)
-
-A second reading of all 90 responses, in a separate session of the same assistant, agreed with the codes above on 86 cells. The four differences were resolved by the author as follows:
-
-- C-P1-consumption-definition-opus, C-P2-consumption-definition-opus, C-P3-consumption-definition-opus: C2 -> C1. Opus's caveat is that the figures are consumption-based and the question may intend territorial totals; that is a scope remark, not a doubt about comparability, so it does not meet the C2 definition.
-- M-P2-B-label-opus: M2 -> M3. "Shouldn't be treated as settled ... to answer the question properly you would need both countries on the same basis" withholds the ranking in the same terms as Opus's other declines.
-
-All 30 M1 codes, the absence of M4 and M5, all 18 F1 codes and the direct-answer codes in C were confirmed by the second reading.
