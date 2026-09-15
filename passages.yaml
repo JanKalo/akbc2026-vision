@@ -1,0 +1,191 @@
+# Vision-paper pilot v2: split-source comparison.
+#
+# Values: total annual CO2 from fossil fuels and industry, excluding land-use
+# change, 2022, Mt CO2, Global Carbon Budget 2025 via Our World in Data.
+# Poland is not used in the pilot; its row is kept for completeness.
+#
+# Each passage = base paragraph (framework-neutral) with {COUNTRY}, {VALUE}
+# and {SLOT} filled in. The slot sentence is the ONLY thing that carries the
+# expression level. Slot sentences are fixed by the brief; do not edit them.
+# Base paragraphs are drafts for the author to edit; run
+# `python scripts/vision_pilot_audit.py` after every edit.
+#
+# Run 1 (2026-09-11) used an earlier draft; see brief section 11 for the
+# three stimulus flaws fixed here.
+#
+# Word-count arithmetic for editors: the audit requires 185-235 words for
+# label/term/none passages. The shortest slot (consumption label) is seven
+# words, so a base must be at least 178 words before the slot to pass.
+
+# Display names supply the article where one is needed. Base text uses the
+# bare {COUNTRY} placeholder; never write "the {COUNTRY}".
+display_names:
+  United Kingdom: the United Kingdom
+
+values:
+  Australia: {territorial: 384.1, consumption: 365.1}
+  United Kingdom: {territorial: 311.1, consumption: 502.8}
+  France: {territorial: 295.3, consumption: 437.4}
+  Poland: {territorial: 314.9, consumption: 299.6}
+  Germany: {territorial: 667.8, consumption: 838.8}
+  Japan: {territorial: 1029.6, consumption: 1201.5}
+
+pairs:
+  - id: P1
+    countries: [United Kingdom, France]   # order used in the question
+    kind: consistent_wrong_mismatch
+  - id: P2
+    countries: [Australia, United Kingdom]
+    kind: reversal
+  - id: P3
+    countries: [Germany, Japan]
+    kind: consistent
+
+slots:
+  territorial:
+    label: "The figure is the country's territorial total, also published as production-based emissions."
+    definition: "The figure counts the carbon dioxide released inside the country's own borders, from fuel burned and industrial processes there, regardless of where the resulting goods and services are used."
+    term: "The figure is the country's reported emissions total."
+    none: "The figure is the annual total for the calendar year, taken from the 2025 data release and rounded to one decimal place."
+  consumption:
+    label: "The figure is the country's consumption-based total."
+    definition: "The figure counts the carbon dioxide released, wherever in the world it occurred, to produce the goods and services used by the country's residents, so it includes emissions from making imports and leaves out emissions from making exports."
+    term: "The figure is the country's carbon footprint."
+    none: "The figure is the annual total for the calendar year, taken from the 2025 data release and rounded to one decimal place."
+
+# Sentences a register's six countries are allowed to share (source and
+# coverage only). Any other sentence shared across countries fails the audit.
+# The value sentence is shared by construction and is exempt.
+shared_sentences:
+  A:
+    - "This note accompanies the annual update of the Global Carbon Budget figures for {COUNTRY} as published by Our World in Data."
+    - "The series covers carbon dioxide only, not other greenhouse gases, and excludes land-use change, and each annual value is rounded to one decimal place."
+  B: []
+
+
+bases:
+  United Kingdom:
+    A: >-
+      This note accompanies the annual update of the Global Carbon Budget figures for {COUNTRY} as published by Our World in Data.
+      The series covers carbon dioxide only, not other greenhouse gases, and excludes land-use change, and each annual value is rounded to one decimal place.
+      For {COUNTRY} the year was an unusual one.
+      Wholesale gas prices climbed to record levels after Russia's invasion of Ukraine, the government stepped in to cap household energy bills from the autumn, and firms faced the highest fuel costs in decades.
+      At the same time activity kept recovering from the pandemic, with travel, hospitality and office occupancy all rising over the course of the year and spending staying firm despite rising prices.
+      Readers comparing this update with earlier ones should note that the whole series is recalculated at each release, so figures for past years can shift slightly.
+      According to the Global Carbon Budget figures published by Our World in Data, {COUNTRY}'s carbon dioxide emissions in 2022 totalled {VALUE} million tonnes.
+      {SLOT}
+      The next scheduled update will incorporate revised underlying statistics and is expected in the autumn following the 2025 release.
+    B: >-
+      Climate policy in {COUNTRY} rests on the Climate Change Act, which obliges governments to set five-yearly carbon budgets on the advice of an independent committee and which was amended to write a net zero date for the middle of the century into law.
+      Successive strategies have set out in detail how the remaining budgets are to be met, and the committee publishes an annual assessment of whether policy is on track.
+      The year in question tested that framework severely.
+      Russia's invasion of Ukraine sent gas prices to record levels, the government introduced an energy price guarantee for households, and ministers argued over a new licensing round for oil and gas and over lifting the block on new wind farms on land.
+      Against that background, the annual carbon dioxide figure is the number most often quoted in the public debate.
+      According to the Global Carbon Budget figures published by Our World in Data, {COUNTRY}'s carbon dioxide emissions in 2022 totalled {VALUE} million tonnes.
+      {SLOT}
+      The figure is quoted in newspaper coverage of the government's climate record and in the commentary that follows each annual release.
+
+  France:
+    A: >-
+      This note accompanies the annual update of the Global Carbon Budget figures for {COUNTRY} as published by Our World in Data.
+      The series covers carbon dioxide only, not other greenhouse gases, and excludes land-use change, and each annual value is rounded to one decimal place.
+      For {COUNTRY} the year brought a combination of pressures.
+      Energy prices rose sharply across Europe after Russia's invasion of Ukraine, and an unusually large number of nuclear reactors were offline for maintenance and corrosion checks, which tightened electricity supply across Western Europe for much of the year.
+      Economic activity kept recovering from the pandemic through the first half of the year, though a hot, dry summer and a government campaign for energy restraint held usage down in the final months.
+      The series is revised whenever the underlying statistics change, so this value may move slightly in later editions.
+      According to the Global Carbon Budget figures published by Our World in Data, {COUNTRY}'s carbon dioxide emissions in 2022 totalled {VALUE} million tonnes.
+      {SLOT}
+      A revised edition of the full series is expected with the next annual budget release.
+    B: >-
+      {COUNTRY} approaches climate policy from an unusual starting point: most of its electricity comes from nuclear reactors, so the national low-carbon strategy concentrates on heating, mobility, farming and heavy industry rather than on the electricity mix.
+      The strategy sets a path to net zero by the middle of the century and is revised every few years alongside a multi-year energy plan, and an independent high council on climate reports each year on whether the country is keeping pace.
+      The year in question strained every part of that plan.
+      Russia's invasion of Ukraine drove up gas prices across Europe, roughly half of the reactor fleet was offline for inspections at the worst point, and the government capped the rise in regulated electricity tariffs to protect households.
+      Debate about whether the strategy is working returns each year to a single number.
+      According to the Global Carbon Budget figures published by Our World in Data, {COUNTRY}'s carbon dioxide emissions in 2022 totalled {VALUE} million tonnes.
+      {SLOT}
+      The figure turns up in press coverage of the strategy each year and in the columns of commentators arguing over whether the pace is enough.
+
+  Australia:
+    A: >-
+      This note accompanies the annual update of the Global Carbon Budget figures for {COUNTRY} as published by Our World in Data.
+      The series covers carbon dioxide only, not other greenhouse gases, and excludes land-use change, and each annual value is rounded to one decimal place.
+      For {COUNTRY} the year was shaped by weather and by world markets.
+      Repeated flooding in the eastern states disrupted mining and rail operations for weeks at a time, while prices for coal and gas on world markets reached unprecedented levels after Russia's invasion of Ukraine.
+      International travel resumed after a long period of restrictions, and spending on services rebounded strongly as the last pandemic rules were lifted.
+      Because the series is recomputed from the latest underlying statistics at every release, the value shown here may differ from the one printed in earlier notes.
+      According to the Global Carbon Budget figures published by Our World in Data, {COUNTRY}'s carbon dioxide emissions in 2022 totalled {VALUE} million tonnes.
+      {SLOT}
+      The next release is expected late next year and will carry the series forward by a further twelve months.
+    B: >-
+      The direction of climate policy in {COUNTRY} changed in 2022.
+      After an election in May, the new government passed climate legislation that wrote a stronger emissions target for the end of the decade and a net zero commitment for the middle of the century into law, and it began work on tightening the safeguard mechanism that covers heavy industry.
+      The change followed a turbulent decade in which federal policy had swung repeatedly between carbon pricing, its repeal and a series of voluntary schemes.
+      The year was also marked by repeated flooding in the eastern states, by high world prices for coal and gas following Russia's invasion of Ukraine, and by a strong rebound in travel and household services as the last pandemic restrictions ended.
+      The new target has turned the annual carbon dioxide total into a political scorecard.
+      According to the Global Carbon Budget figures published by Our World in Data, {COUNTRY}'s carbon dioxide emissions in 2022 totalled {VALUE} million tonnes.
+      {SLOT}
+      The figure is quoted in reporting on whether the new target is within reach and in the opinion pages that follow each annual release.
+
+  Germany:
+    A: >-
+      This note accompanies the annual update of the Global Carbon Budget figures for {COUNTRY} as published by Our World in Data.
+      The series covers carbon dioxide only, not other greenhouse gases, and excludes land-use change, and each annual value is rounded to one decimal place.
+      For {COUNTRY} the year was dominated by the loss of pipeline gas from Russia.
+      Prices for gas and electricity rose to record levels after the invasion of Ukraine, the government spent heavily to shield households and firms, and industrial activity slowed markedly in the second half of the year.
+      Earlier in the year activity had still been recovering from the pandemic, so the annual picture combines a rebound with a late slowdown.
+      As with every country in the series, the figure is provisional until the underlying statistics on which it rests are finalised.
+      According to the Global Carbon Budget figures published by Our World in Data, {COUNTRY}'s carbon dioxide emissions in 2022 totalled {VALUE} million tonnes.
+      {SLOT}
+      Any revision will appear in the next annual edition of the series together with the figure for the following year.
+    B: >-
+      In {COUNTRY} the energy transition, the long programme of replacing nuclear and fossil fuels with wind and solar, is the frame for every climate decision, together with a coal exit that the law sets for the end of the following decade but that the governing coalition has said it wants to bring forward.
+      A federal climate law also sets annual budgets for each sector and a net zero date before the middle of the century.
+      The year in question upended the assumptions behind that plan.
+      Pipeline gas from Russia was cut off after the invasion of Ukraine, the government spent heavily to shield households and firms, the last nuclear plants were kept running past their planned closing date, and a series of emergency steps was taken to secure energy supply through the coming winter.
+      Every dispute over the pace of the transition eventually cites the annual emissions total.
+      According to the Global Carbon Budget figures published by Our World in Data, {COUNTRY}'s carbon dioxide emissions in 2022 totalled {VALUE} million tonnes.
+      {SLOT}
+      The figure is quoted in coverage of the transition's progress and in the arguments between its advocates and its critics after each release.
+
+  Japan:
+    A: >-
+      This note accompanies the annual update of the Global Carbon Budget figures for {COUNTRY} as published by Our World in Data.
+      The series covers carbon dioxide only, not other greenhouse gases, and excludes land-use change, and each annual value is rounded to one decimal place.
+      For {COUNTRY} the year combined a weak yen with high world fuel prices, which pushed the national fuel bill to a record even though overall energy usage stayed broadly flat.
+      Russia's invasion of Ukraine raised prices for the liquefied natural gas on which the country relies heavily, and the government asked households and businesses to save electricity during the summer and winter peaks.
+      Pandemic restrictions were lifted step by step, and inbound tourism reopened in the autumn, lifting activity in services.
+      Figures for the most recent years are the most likely to be revised as fuller statistics arrive.
+      According to the Global Carbon Budget figures published by Our World in Data, {COUNTRY}'s carbon dioxide emissions in 2022 totalled {VALUE} million tonnes.
+      {SLOT}
+      Users of the series should check the release notes of the next edition before quoting this value as final.
+    B: >-
+      {COUNTRY}'s climate pledge is to cut emissions by nearly half by the end of this decade against a baseline from the previous one, on the way to net zero by the middle of the century.
+      Delivering it depends heavily on restarting nuclear reactors that were shut down after the earthquake and tsunami at Fukushima, a process that has moved slowly through safety reviews and the need for local consent.
+      The year in question brought a weak yen and record fuel costs after Russia's invasion of Ukraine, which strengthened the government's case for further restarts, for a longer operating life for existing reactors and, by the end of the year, for building new ones.
+      Pandemic restrictions were lifted gradually over the year and inbound tourism reopened in the autumn.
+      Ministers argued through the year over how far the reactor programme could be pushed without losing local support.
+      According to the Global Carbon Budget figures published by Our World in Data, {COUNTRY}'s carbon dioxide emissions in 2022 totalled {VALUE} million tonnes.
+      {SLOT}
+      The figure appears in reporting on the restart programme and in editorials that weigh the pledge against the cost of energy.
+
+  Poland:
+    A: >-
+      This note accompanies the annual update of the Global Carbon Budget figures for {COUNTRY} as published by Our World in Data.
+      The series covers carbon dioxide only, not other greenhouse gases, and excludes land-use change, and each annual value is rounded to one decimal place.
+      For {COUNTRY} the year brought an acute coal shortage after supplies from Russia were banned in the spring, with households queuing at mine gates for fuel ahead of winter and prices multiplying within months.
+      Activity was still recovering from the pandemic in the first half of the year, and the arrival of millions of refugees from Ukraine raised demand for housing, heating and services.
+      Higher prices and a mild autumn then held energy use down toward the end of the year.
+      The value is provisional and will be reconciled against the final underlying statistics when those are published.
+      According to the Global Carbon Budget figures published by Our World in Data, {COUNTRY}'s carbon dioxide emissions in 2022 totalled {VALUE} million tonnes.
+      {SLOT}
+      Subsequent editions of the series will restate the figure if the underlying statistics are revised.
+    B: >-
+      Few countries in the European Union start from a harder position than {COUNTRY}, whose electricity system still relies on coal more than any other in the bloc and whose national energy policy plans a gradual shift toward gas, wind and nuclear power over the coming decades.
+      The country negotiates hard over European Union targets and has long argued that its starting point justifies a slower path than its western neighbours.
+      The year in question brought an acute coal shortage after supplies from Russia were banned, households queued for fuel ahead of winter, and the government introduced price caps and a coal allowance for households.
+      Millions of refugees from Ukraine arrived in the spring, raising demand for housing and heating.
+      In this setting the annual carbon dioxide total serves as a bargaining chip in every negotiation with its partners.
+      According to the Global Carbon Budget figures published by Our World in Data, {COUNTRY}'s carbon dioxide emissions in 2022 totalled {VALUE} million tonnes.
+      {SLOT}
+      The figure is quoted in reporting on the country's disputes with Brussels and in commentary at home on the cost of the transition.

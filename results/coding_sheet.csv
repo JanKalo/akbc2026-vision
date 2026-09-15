@@ -1,0 +1,841 @@
+cell_id,set,pair,pair_kind,assignment,level,model,passage_order,expected_territorial,expected_consumption,mismatch_ranking,empty_response,response_text,m_code,mentions_framework_difference,states_mismatch_ranking,external_inference,c_code,f_code
+M-P1-A-label-gemma,M,P1,consistent_wrong_mismatch,A,label,openrouter/google/gemma-4-31b-it,United Kingdom:territorial:A | France:consumption:B,United Kingdom,United Kingdom,France,n,"Based on the provided text, France had higher total annual CO2 emissions in 2022. France's emissions totaled 437.4 million tonnes, while the United Kingdom's emissions totaled 311.1 million tonnes.",M1,n,y,n,,
+M-P1-A-label-qwen,M,P1,consistent_wrong_mismatch,A,label,openrouter/qwen/qwen3.8-max-0902,United Kingdom:territorial:A | France:consumption:B,United Kingdom,United Kingdom,France,n,"Based on the retrieved excerpts, **France** had higher total annual CO₂ emissions in 2022.
+
+- **France:** 437.4 million tonnes of CO₂ in 2022 (consumption-based total, per the Global Carbon Budget / Our World in Data).
+- **United Kingdom:** 311.1 million tonnes of CO₂ in 2022 (territorial/production-based total, per the same source).
+
+**A caveat on comparability:** The two figures use different accounting methods. The UK number is a *production-based* (territorial) total, while the French number is a *consumption-based* total (which adds emissions embedded in imports and subtracts those embedded in exports). Consumption-based totals are typically higher than production-based ones for net-importing economies. So while France's reported figure is clearly the larger of the two numbers presented, a strict like-for-like comparison would require both countries to be measured on the same basis.",M2,y,y,y,,
+M-P1-A-label-opus,M,P1,consistent_wrong_mismatch,A,label,openrouter/anthropic/claude-opus-5,United Kingdom:territorial:A | France:consumption:B,United Kingdom,United Kingdom,France,n,"## Short answer: the excerpts don't allow a valid comparison
+
+The two figures available are measured on **different accounting bases**, so putting them side by side would be misleading.
+
+| Country | 2022 CO₂ | Basis |
+|---|---|---|
+| United Kingdom | 311.1 million tonnes | Territorial / **production-based** |
+| France | 437.4 million tonnes | **Consumption-based** |
+
+## Why this matters
+
+- **Production-based (territorial)** emissions count CO₂ released inside a country's borders.
+- **Consumption-based** emissions adjust for trade: they add emissions embodied in imported goods and subtract those embodied in exports.
+
+For wealthy, net-importing European economies, the consumption-based figure is typically **higher** than the territorial one. So France's 437.4 Mt is not comparable to the UK's 311.1 Mt — France's territorial figure would be lower than its consumption figure, and the UK's consumption figure would be higher than its 311.1 Mt territorial total. Comparing 311.1 to 437.4 would systematically exaggerate any gap in France's direction.
+
+## What would be needed
+
+To answer your question properly, you'd need both countries' figures on the **same** basis from the same Global Carbon Budget release — either both territorial or both consumption-based. Note also that the excerpt on the UK warns that the entire series is recalculated at each release, so vintage matters too: figures should come from the same edition.
+
+Both series here also cover **CO₂ only** (excluding other greenhouse gases such as methane and nitrous oxide) and **exclude land-use change**, which is a further caveat if you're interested in total climate impact rather than fossil CO₂ alone.",M3,y,n,y,,
+M-P1-B-label-gemma,M,P1,consistent_wrong_mismatch,B,label,openrouter/google/gemma-4-31b-it,France:territorial:B | United Kingdom:consumption:A,United Kingdom,United Kingdom,United Kingdom,n,"Based on the provided text, the **United Kingdom** had higher total annual CO2 emissions in 2022.
+
+According to the Global Carbon Budget figures published by Our World in Data:
+*   The **United Kingdom's** emissions totaled **502.8 million tonnes**.
+*   **France's** emissions totaled **295.3 million tonnes**.",M1,n,y,n,,
+M-P1-B-label-qwen,M,P1,consistent_wrong_mismatch,B,label,openrouter/qwen/qwen3.8-max-0902,France:territorial:B | United Kingdom:consumption:A,United Kingdom,United Kingdom,United Kingdom,n,"Based on the retrieved excerpts, the **United Kingdom** had the higher figure: **502.8 million tonnes** of CO₂ in 2022, compared with France's **295.3 million tonnes**.
+
+However, an important caveat applies: the two figures are measured on **different accounting bases**.
+
+- **France (295.3 Mt):** This is the *territorial (production-based)* total, counting emissions released within France's borders.
+- **United Kingdom (502.8 Mt):** This is the *consumption-based* total, which adds emissions embedded in imported goods and subtracts those embedded in exports.
+
+Because consumption-based totals typically exceed production-based totals for net-importing economies, the two numbers are not directly comparable. A like-for-like comparison would require both countries' figures on the same basis (either both production-based or both consumption-based). The excerpts do not provide the UK's production-based figure or France's consumption-based figure, so a strictly apples-to-apples answer cannot be given from these sources alone.",M3,y,n,y,,
+M-P1-B-label-opus,M,P1,consistent_wrong_mismatch,B,label,openrouter/anthropic/claude-opus-5,France:territorial:B | United Kingdom:consumption:A,United Kingdom,United Kingdom,United Kingdom,n,"**A direct comparison isn't possible from these excerpts, because the two figures are measured on different bases.**
+
+| Country | 2022 CO₂ (Global Carbon Budget / Our World in Data) | Accounting basis |
+|---|---|---|
+| France | 295.3 million tonnes | Territorial / **production-based** |
+| United Kingdom | 502.8 million tonnes | **Consumption-based** |
+
+Why this matters: a production-based (territorial) total counts emissions released inside a country's borders, whereas a consumption-based total adjusts for trade — subtracting emissions embodied in exports and adding those embodied in imports. For a net importer of manufactured goods, the consumption-based figure is typically substantially *higher* than the territorial one. So the UK's 502.8 Mt is not the counterpart of France's 295.3 Mt; comparing them would overstate the UK's position relative to France.
+
+What can be said:
+- On a consumption basis, the UK emitted 502.8 Mt in 2022, but the excerpts give no consumption-based figure for France.
+- On a territorial basis, France emitted 295.3 Mt in 2022, but the excerpts give no territorial figure for the UK.
+
+To answer the question properly, you would need both countries on the same basis from the same Global Carbon Budget release. Two further caveats from the source notes: the series covers CO₂ only (excluding other greenhouse gases and land-use change), and the entire series is recalculated at each annual release, so past-year values can shift slightly between editions.",M3,y,n,y,,
+M-P1-A-definition-gemma,M,P1,consistent_wrong_mismatch,A,definition,openrouter/google/gemma-4-31b-it,United Kingdom:territorial:A | France:consumption:B,United Kingdom,United Kingdom,France,n,"Based on the provided excerpts, France had higher total annual $\text{CO}_2$ emissions in 2022.
+
+*   **France:** 437.4 million tonnes [2]
+*   **United Kingdom:** 311.1 million tonnes [1]",M1,n,y,n,,
+M-P1-A-definition-qwen,M,P1,consistent_wrong_mismatch,A,definition,openrouter/qwen/qwen3.8-max-0902,United Kingdom:territorial:A | France:consumption:B,United Kingdom,United Kingdom,France,n,"Based on the retrieved excerpts, **France's reported figure (437.4 million tonnes) is higher than the United Kingdom's (311.1 million tonnes)** for 2022. However, an important caveat is that the two numbers are **not measured on the same basis**, so a straightforward comparison is misleading:
+
+- **United Kingdom (311.1 Mt CO₂):** This is a **territorial (production-based)** figure. It counts CO₂ released *inside the UK's borders* from fuel combustion and industrial processes, regardless of where the resulting goods and services are ultimately consumed.
+
+- **France (437.4 Mt CO₂):** This is a **consumption-based** figure. It counts CO₂ released *anywhere in the world* to produce the goods and services used by France's residents, including emissions embedded in imports and excluding those embedded in exports.
+
+Because consumption-based accounting typically adds the emissions associated with imported goods (and subtracts those tied to exports), it tends to yield a larger number than a territorial count for net-importing economies. If both countries were measured on the same basis, the gap could narrow, widen, or even reverse.
+
+**In short:** The excerpts show France's 2022 figure (437.4 Mt) exceeding the UK's (311.1 Mt), but the two figures use different accounting methodologies and therefore cannot be directly compared as like-for-like totals.",M2,y,y,y,,
+M-P1-A-definition-opus,M,P1,consistent_wrong_mismatch,A,definition,openrouter/anthropic/claude-opus-5,United Kingdom:territorial:A | France:consumption:B,United Kingdom,United Kingdom,France,n,"## Short answer
+
+The excerpts don't allow a valid comparison — the two figures are measured on **different accounting bases**.
+
+## What each figure actually measures
+
+| Country | 2022 CO₂ figure | Accounting basis |
+|---|---|---|
+| United Kingdom | 311.1 million tonnes | **Territorial/production-based** — CO₂ released inside the country's borders, regardless of where the goods are consumed [1] |
+| France | 437.4 million tonnes | **Consumption-based** — CO₂ released anywhere in the world to produce goods and services used by residents; includes imports, excludes exports [2] |
+
+## Why this matters
+
+Comparing these two numbers directly would be an apples-to-oranges comparison. Consumption-based totals are typically higher than territorial totals for wealthy, import-heavy economies, because they add in the emissions embodied in imported manufactured goods. So France's 437.4 Mt figure is inflated relative to a territorial measure, while the UK's 311.1 Mt figure is not. Concluding ""France emitted more"" from these numbers would likely be wrong, or at least unsupported.
+
+To answer the question properly you would need both countries on the same basis — either both territorial or both consumption-based — from the same Global Carbon Budget release.
+
+## Two further caveats
+
+- **Scope:** Both series cover carbon dioxide only (not other greenhouse gases) and exclude land-use change [1].
+- **Revisions:** The entire series is recalculated at each release, so past-year figures can shift slightly between updates [1]. If the two excerpts come from different release vintages, that adds another small source of non-comparability.
+
+## Context for the year
+
+Both countries faced unusual conditions in 2022: record wholesale gas prices following Russia's invasion of Ukraine, government intervention on energy bills, and continued post-pandemic recovery in travel and activity in the UK [1]; in France, the same gas price shock coincided with roughly half the nuclear reactor fleet being offline for inspections at the worst point, plus a cap on regulated electricity tariffs [2].",M3,y,n,y,,
+M-P1-B-definition-gemma,M,P1,consistent_wrong_mismatch,B,definition,openrouter/google/gemma-4-31b-it,France:territorial:B | United Kingdom:consumption:A,United Kingdom,United Kingdom,United Kingdom,n,"Based on the provided text, the **United Kingdom** had higher total annual $\text{CO}_2$ emissions in 2022.
+
+*   **United Kingdom:** 502.8 million tonnes [2]
+*   **France:** 295.3 million tonnes [1]",M1,n,y,n,,
+M-P1-B-definition-qwen,M,P1,consistent_wrong_mismatch,B,definition,openrouter/qwen/qwen3.8-max-0902,France:territorial:B | United Kingdom:consumption:A,United Kingdom,United Kingdom,United Kingdom,n,"Based on the retrieved excerpts, the two countries' 2022 CO₂ figures are reported on **different accounting bases**, so a straightforward comparison is misleading:
+
+- **France:** 295.3 million tonnes of CO₂ (territorial/production-based — emissions released *inside* France's borders from fuel combustion and industrial processes). [Excerpt 1]
+
+- **United Kingdom:** 502.8 million tonnes of CO₂ (consumption-based — emissions released *anywhere in the world* to produce the goods and services consumed by UK residents, including imports and excluding exports). [Excerpt 2]
+
+Numerically, the UK figure (502.8 Mt) is larger than France's (295.3 Mt). However, these numbers are **not directly comparable** because they measure different things. A territorial figure for the UK would be lower than 502.8 Mt (since it would exclude emissions embedded in imports), and a consumption-based figure for France would be higher than 295.3 Mt (since it would add emissions embedded in French imports). Without both countries reported on the same basis, one cannot definitively say which country ""had higher emissions"" from these excerpts alone.
+
+**In short:** The UK's reported number is higher, but the two figures use incompatible methodologies (territorial vs. consumption-based), so the comparison as presented is not apples-to-apples.",M3,y,n,y,,
+M-P1-B-definition-opus,M,P1,consistent_wrong_mismatch,B,definition,openrouter/anthropic/claude-opus-5,France:territorial:B | United Kingdom:consumption:A,United Kingdom,United Kingdom,United Kingdom,n,"**The excerpts don't allow a valid comparison**, because the two figures are measured on different bases.
+
+| Country | 2022 CO₂ (Global Carbon Budget / Our World in Data) | Accounting basis |
+|---|---|---|
+| France | 295.3 million tonnes | **Territorial (production-based)** — CO₂ released inside France's borders, regardless of where the goods are consumed |
+| United Kingdom | 502.8 million tonnes | **Consumption-based** — CO₂ emitted anywhere in the world to produce the goods and services used by UK residents; includes emissions embodied in imports, excludes those in exports |
+
+Why this matters: a consumption-based figure for a wealthy, net-importing economy is typically substantially *higher* than its territorial figure, because emissions from manufacturing imported goods are added in. So the UK's 502.8 Mt is not the same kind of quantity as France's 295.3 Mt, and the gap between the two numbers reflects the difference in accounting method as much as any real difference in emissions.
+
+To answer your question properly, you would need either:
+- both countries' **territorial** emissions for 2022, or
+- both countries' **consumption-based** emissions for 2022.
+
+A further caveat from the UK note: the Global Carbon Budget series is recalculated in full at each release, so values for past years shift slightly between editions — comparisons should ideally use figures from the same release. The UK series also covers CO₂ only and excludes land-use change.",M3,y,n,y,,
+M-P1-A-none-gemma,M,P1,consistent_wrong_mismatch,A,none,openrouter/google/gemma-4-31b-it,United Kingdom:territorial:A | France:consumption:B,United Kingdom,United Kingdom,France,n,"France had higher total annual CO2 emissions in 2022. According to the provided excerpts, France's emissions totaled 437.4 million tonnes, while the United Kingdom's emissions totaled 311.1 million tonnes.",M1,n,y,n,,
+M-P1-A-none-qwen,M,P1,consistent_wrong_mismatch,A,none,openrouter/qwen/qwen3.8-max-0902,United Kingdom:territorial:A | France:consumption:B,United Kingdom,United Kingdom,France,n,"**France** had higher total annual CO₂ emissions in 2022.
+
+According to the Global Carbon Budget figures published by Our World in Data (2025 data release):
+
+- **France:** 437.4 million tonnes of CO₂ in 2022 [2]
+- **United Kingdom:** 311.1 million tonnes of CO₂ in 2022 [1]
+
+France's emissions were therefore roughly 126 million tonnes higher than those of the United Kingdom in 2022.",M1,n,y,n,,
+M-P1-A-none-opus,M,P1,consistent_wrong_mismatch,A,none,openrouter/anthropic/claude-opus-5,United Kingdom:territorial:A | France:consumption:B,United Kingdom,United Kingdom,France,n,"**France** had higher total CO₂ emissions in 2022.
+
+According to Global Carbon Budget figures published by Our World in Data (2025 data release):
+
+| Country | 2022 CO₂ emissions |
+|---|---|
+| France | 437.4 million tonnes |
+| United Kingdom | 311.1 million tonnes |
+
+France's total was roughly 126.3 million tonnes higher — about 41% above the UK's figure.
+
+A few caveats worth noting:
+
+- **Scope:** These figures cover carbon dioxide only (not other greenhouse gases) and exclude emissions from land-use change.
+- **Revisions:** The entire series is recalculated with each annual release, so values for past years can shift slightly in future updates.
+- **Totals, not per capita:** These are national annual totals. France's larger population (roughly 68 million vs. about 67 million in the UK) accounts for only a small part of the gap, but the comparison would look different on a per-person basis, and different again if consumption-based accounting were used.
+
+Both countries faced unusual conditions in 2022: record wholesale gas prices following Russia's invasion of Ukraine, government intervention to cap energy bills, and continued post-pandemic recovery in travel and activity. France additionally had roughly half its nuclear reactor fleet offline for inspections at the worst point in the year, which is relevant context for its emissions total given how much of its electricity normally comes from nuclear power.",M1,n,y,n,,
+M-P1-B-none-gemma,M,P1,consistent_wrong_mismatch,B,none,openrouter/google/gemma-4-31b-it,France:territorial:B | United Kingdom:consumption:A,United Kingdom,United Kingdom,United Kingdom,n,"The United Kingdom had higher total annual CO2 emissions in 2022. According to the provided excerpts from the Global Carbon Budget figures published by Our World in Data:
+
+*   **United Kingdom:** 502.8 million tonnes
+*   **France:** 295.3 million tonnes",M1,n,y,n,,
+M-P1-B-none-qwen,M,P1,consistent_wrong_mismatch,B,none,openrouter/qwen/qwen3.8-max-0902,France:territorial:B | United Kingdom:consumption:A,United Kingdom,United Kingdom,United Kingdom,n,"According to the retrieved excerpts, the **United Kingdom** had higher total annual CO₂ emissions in 2022.
+
+- **United Kingdom:** 502.8 million tonnes of CO₂ (Global Carbon Budget, 2025 data release, via Our World in Data) [2]
+- **France:** 295.3 million tonnes of CO₂ (Global Carbon Budget, 2025 data release, via Our World in Data) [1]
+
+Thus, the UK's 2022 CO₂ emissions exceeded France's by roughly 207.5 million tonnes.",M1,n,y,n,,
+M-P1-B-none-opus,M,P1,consistent_wrong_mismatch,B,none,openrouter/anthropic/claude-opus-5,France:territorial:B | United Kingdom:consumption:A,United Kingdom,United Kingdom,United Kingdom,n,"Based on the retrieved excerpts, **the United Kingdom had higher total CO2 emissions in 2022 than France**.
+
+| Country | 2022 CO₂ emissions |
+|---|---|
+| United Kingdom | 502.8 million tonnes |
+| France | 295.3 million tonnes |
+
+The UK's total was about 207.5 million tonnes higher — roughly 70% more than France's.
+
+Both figures come from the Global Carbon Budget as published by Our World in Data (2025 data release), are annual calendar-year totals rounded to one decimal place, and cover carbon dioxide only — excluding other greenhouse gases and land-use change.
+
+A few contextual points from the excerpts:
+
+- **France's relatively low total** reflects its heavily nuclear electricity system, which is why its national low-carbon strategy focuses on heating, transport, agriculture and heavy industry rather than the power mix. 2022 was a difficult year, however, with roughly half the reactor fleet offline for inspections at the worst point.
+- **Both countries faced the same energy shock** in 2022 — record gas prices following Russia's invasion of Ukraine, and government intervention to cap consumer energy costs. In the UK, post-pandemic recovery in travel, hospitality and office occupancy also pushed activity upward.
+- **Caveat on comparability over time:** the excerpt for the UK notes that the entire series is recalculated with each release, so values for past years can shift slightly between updates. Comparisons are safest when both figures come from the same release, as they do here.",M1,n,y,n,,
+M-P2-A-label-gemma,M,P2,reversal,A,label,openrouter/google/gemma-4-31b-it,Australia:territorial:A | United Kingdom:consumption:B,Australia,United Kingdom,United Kingdom,n,"Based on the provided text, the United Kingdom had higher total annual $\text{CO}_2$ emissions in 2022.
+
+*   **United Kingdom:** 502.8 million tonnes [2]
+*   **Australia:** 384.1 million tonnes [1]",M1,n,y,n,,
+M-P2-A-label-qwen,M,P2,reversal,A,label,openrouter/qwen/qwen3.8-max-0902,Australia:territorial:A | United Kingdom:consumption:B,Australia,United Kingdom,United Kingdom,n,"Based on the retrieved excerpts, the **United Kingdom** had the higher figure: **502.8 million tonnes** of CO₂ in 2022, compared with Australia's **384.1 million tonnes**.
+
+However, an important caveat is that the two figures are measured on different bases:
+
+- **Australia's 384.1 Mt** is a **territorial (production-based)** total, counting emissions released within Australia's borders.
+- **The UK's 502.8 Mt** is a **consumption-based** total, which adds emissions embedded in imported goods and subtracts those embedded in exports.
+
+Because the accounting methods differ, the two numbers are not directly comparable. If both were measured on the same basis (either both production-based or both consumption-based), the gap could be smaller or larger. Nonetheless, as reported in the Global Carbon Budget data cited in these excerpts, the UK's stated figure for 2022 exceeds Australia's.",M2,y,y,n,,
+M-P2-A-label-opus,M,P2,reversal,A,label,openrouter/anthropic/claude-opus-5,Australia:territorial:A | United Kingdom:consumption:B,Australia,United Kingdom,United Kingdom,n,"**The excerpts don't support a clean comparison, because the two figures are measured on different bases.**
+
+What's given:
+
+| Country | 2022 CO₂ | Basis |
+|---|---|---|
+| Australia | 384.1 Mt | Territorial / production-based |
+| United Kingdom | 502.8 Mt | Consumption-based |
+
+Why this matters: a **production-based (territorial)** total counts emissions released inside a country's borders, while a **consumption-based** total adjusts that figure for trade — subtracting emissions embodied in exports and adding those embodied in imports. The UK is a substantial net importer of embodied carbon, so its consumption-based figure is materially higher than its territorial figure. Australia, as a large exporter of energy and minerals, tends to run the other way. Comparing 384.1 Mt (territorial) with 502.8 Mt (consumption-based) therefore does not tell you which country emitted more on a like-for-like basis.
+
+To answer the question properly you would need either:
+- both countries' **territorial** figures, or
+- both countries' **consumption-based** figures,
+
+from the same Global Carbon Budget release. Neither excerpt provides the matching counterpart figure.
+
+One further caution flagged in the first excerpt: the series is recomputed from updated underlying statistics at every annual release, so values for the same year can shift between publications. Any comparison should draw both numbers from a single release vintage.",M3,y,n,y,,
+M-P2-B-label-gemma,M,P2,reversal,B,label,openrouter/google/gemma-4-31b-it,United Kingdom:territorial:B | Australia:consumption:A,Australia,United Kingdom,Australia,n,"Based on the provided excerpts, Australia had higher total annual CO2 emissions in 2022.
+
+*   **Australia:** 365.1 million tonnes [2]
+*   **United Kingdom:** 311.1 million tonnes [1]",M1,n,y,n,,
+M-P2-B-label-qwen,M,P2,reversal,B,label,openrouter/qwen/qwen3.8-max-0902,United Kingdom:territorial:B | Australia:consumption:A,Australia,United Kingdom,Australia,n,"Based on the retrieved excerpts, **Australia** had higher total annual CO₂ emissions in 2022.
+
+- **Australia:** 365.1 million tonnes of CO₂ (consumption-based total)
+- **United Kingdom:** 311.1 million tonnes of CO₂ (production-based/territorial total)
+
+Australia's emissions exceeded the UK's by approximately 54 million tonnes.
+
+It is worth noting, however, that the two figures use different accounting methods: the UK figure is a **production-based** (territorial) total, while the Australia figure is a **consumption-based** total. These bases are not directly equivalent, so a strict like-for-like comparison would require both countries' figures to be measured on the same basis. Nonetheless, on the numbers as reported, Australia's 2022 CO₂ total was the higher of the two.",M2,y,y,n,,
+M-P2-B-label-opus,M,P2,reversal,B,label,openrouter/anthropic/claude-opus-5,United Kingdom:territorial:B | Australia:consumption:A,Australia,United Kingdom,Australia,n,"**On the face of the numbers, Australia's figure is the higher of the two — but the two figures are not measuring the same thing, so the comparison shouldn't be treated as settled.**
+
+| Country | 2022 CO₂ | Accounting basis |
+|---|---|---|
+| Australia | 365.1 Mt | **Consumption-based** (excerpt 2) |
+| United Kingdom | 311.1 Mt | **Production-based / territorial** (excerpt 1) |
+
+**Why this matters**
+
+- *Territorial (production-based)* emissions count CO₂ released inside a country's borders. *Consumption-based* emissions adjust that total by adding emissions embodied in imported goods and subtracting those embodied in exports.
+- The two can differ substantially for the same country. The UK, as a net importer of manufactured goods, typically has consumption-based emissions meaningfully **above** its territorial figure; so a like-for-like consumption-based comparison would narrow the gap shown above, and a like-for-like territorial comparison would change Australia's number too (its territorial total is generally the larger of its two measures, since it is a net exporter of energy and resource-intensive goods).
+- The excerpts do not supply the matching pair for either country, so the honest answer is that **Australia's 365.1 Mt exceeds the UK's 311.1 Mt as reported, but only because two different metrics are being placed side by side.**
+
+**Other caveats from the sources**
+
+- Both series cover CO₂ only (not methane or other greenhouse gases) and exclude land-use change.
+- The Global Carbon Budget is recomputed from updated underlying statistics at each release, so both values may be revised (excerpt 2 states this explicitly).
+- Absolute totals also say nothing about per-capita emissions, where Australia is ordinarily several times the UK — a relevant point given that excerpt 1 frames the UK figure in terms of the country's climate record.
+
+**Bottom line:** To answer the question properly you would need both countries on the same basis from the same Our World in Data release — either both territorial or both consumption-based.",M3,y,y,y,,
+M-P2-A-definition-gemma,M,P2,reversal,A,definition,openrouter/google/gemma-4-31b-it,Australia:territorial:A | United Kingdom:consumption:B,Australia,United Kingdom,United Kingdom,n,"Based on the provided excerpts, the **United Kingdom** had higher total annual $\text{CO}_2$ emissions in 2022.
+
+*   **United Kingdom:** 502.8 million tonnes [2]
+*   **Australia:** 384.1 million tonnes [1]",M1,n,y,n,,
+M-P2-A-definition-qwen,M,P2,reversal,A,definition,openrouter/qwen/qwen3.8-max-0902,Australia:territorial:A | United Kingdom:consumption:B,Australia,United Kingdom,United Kingdom,n,"Based on the retrieved excerpts, the **United Kingdom** had the higher figure: **502.8 million tonnes** of CO₂ in 2022, compared with Australia's **384.1 million tonnes**.
+
+However, an important caveat is that the two figures are measured on **different bases**:
+
+- **Australia's 384.1 Mt** is a **territorial (production-based)** figure — it counts CO₂ released inside Australia's borders from fuel combustion and industrial processes, regardless of where the resulting goods are consumed.
+- **The UK's 502.8 Mt** is a **consumption-based** figure — it counts CO₂ released anywhere in the world to produce the goods and services used by UK residents, including emissions embedded in imports and excluding emissions from producing exports.
+
+Because these are not like-for-like metrics, a direct comparison is not straightforward. If both countries were measured on the same basis (either both territorial or both consumption-based), the ranking could differ. Nonetheless, taking the numbers as reported in the Global Carbon Budget excerpts provided, the UK's stated 2022 CO₂ figure (502.8 Mt) exceeds Australia's (384.1 Mt).",M2,y,y,n,,
+M-P2-A-definition-opus,M,P2,reversal,A,definition,openrouter/anthropic/claude-opus-5,Australia:territorial:A | United Kingdom:consumption:B,Australia,United Kingdom,United Kingdom,n,"**The excerpts don't allow a valid comparison, because the two figures are measured on different bases.**
+
+| Country | 2022 CO₂ figure | Basis of measurement |
+|---|---|---|
+| Australia | 384.1 million tonnes | **Production-based (territorial)** — CO₂ released inside the country's borders, regardless of where the goods are consumed |
+| United Kingdom | 502.8 million tonnes | **Consumption-based (footprint)** — CO₂ released anywhere in the world to produce goods and services used by UK residents, including imports and excluding exports |
+
+Taken at face value the UK number is larger, but that is not an apples-to-apples answer to your question. Consumption-based totals are typically higher than territorial totals for a net-importing economy like the UK's, and lower for a fossil-fuel- and resource-exporting economy like Australia's. Comparing a UK consumption figure against an Australian territorial figure therefore systematically overstates the UK's position relative to Australia.
+
+To answer ""total annual CO₂ emissions"" properly you would need both countries on the same accounting basis — most commonly territorial emissions. The retrieved material doesn't provide the UK's territorial figure (or Australia's consumption-based figure), so I can't complete the comparison from these sources.
+
+Two further caveats worth noting: both series cover carbon dioxide only, not other greenhouse gases such as methane; the Australian figure explicitly excludes land-use change; and the Global Carbon Budget is recomputed at each release, so values can shift between editions.",M3,y,n,y,,
+M-P2-B-definition-gemma,M,P2,reversal,B,definition,openrouter/google/gemma-4-31b-it,United Kingdom:territorial:B | Australia:consumption:A,Australia,United Kingdom,Australia,n,"Based on the provided text, **Australia** had higher total annual $\text{CO}_2$ emissions in 2022.
+
+According to the Global Carbon Budget figures published by Our World in Data:
+*   **Australia's** emissions totaled **365.1 million tonnes** [2].
+*   **The United Kingdom's** emissions totaled **311.1 million tonnes** [1].",M1,n,y,n,,
+M-P2-B-definition-qwen,M,P2,reversal,B,definition,openrouter/qwen/qwen3.8-max-0902,United Kingdom:territorial:B | Australia:consumption:A,Australia,United Kingdom,Australia,n,"Based on the retrieved excerpts, **Australia's reported CO₂ figure for 2022 (365.1 million tonnes) is higher than the United Kingdom's (311.1 million tonnes)**.
+
+However, an important caveat is that the two figures are **not measured on the same basis**:
+
+- **United Kingdom (311.1 Mt):** This is a **territorial (production-based)** figure. It counts CO₂ released *inside* the UK's borders from fuel combustion and industrial processes, regardless of where the resulting goods and services are ultimately consumed.
+
+- **Australia (365.1 Mt):** This is a **consumption-based** figure. It counts CO₂ released *anywhere in the world* to produce the goods and services used by Australia's residents, including emissions embedded in imports and excluding emissions embedded in exports.
+
+Because the accounting methodologies differ, the two numbers cannot be directly compared as like-for-like measures of each country's emissions. A fair comparison would require both figures to be calculated using the same approach (either both territorial or both consumption-based).",M2,y,y,n,,
+M-P2-B-definition-opus,M,P2,reversal,B,definition,openrouter/anthropic/claude-opus-5,United Kingdom:territorial:B | Australia:consumption:A,Australia,United Kingdom,Australia,n,"**Short answer: the two figures on record aren't measured the same way, so a like-for-like comparison isn't possible from these excerpts.**
+
+Here is what each source actually reports, both drawn from the Global Carbon Budget via Our World in Data:
+
+| Country | 2022 CO₂ | Accounting basis |
+|---|---|---|
+| United Kingdom | 311.1 million tonnes | **Territorial (production-based)** — CO₂ released inside the country's borders, regardless of where the goods and services are consumed |
+| Australia | 365.1 million tonnes | **Consumption-based** — CO₂ released anywhere in the world to make the goods and services used by residents; includes imports, excludes exports |
+
+**Why this matters.** The Australian figure is a footprint measure, while the British one is a within-borders measure. For Australia in particular the gap between the two is likely to be large and negative — it is a major exporter of coal and gas, and consumption-based accounting strips out emissions embodied in exports while adding those embodied in imports. The UK, a net importer of manufactured goods, typically shows the opposite pattern: its consumption-based total runs above its territorial total. So comparing 365.1 with 311.1 is not a comparison of ""total annual emissions"" on a common definition.
+
+**What can and cannot be concluded:**
+
+- Taken at face value, the Australian number is the larger of the two (365.1 vs. 311.1 Mt).
+- But that ordering may not hold on a consistent basis. Neither excerpt gives Australia's territorial figure or the UK's consumption-based figure, which are the pairings you would need.
+- Both series cover CO₂ only, exclude other greenhouse gases, and (per the Australian note) exclude land-use change. The Australian note also warns that values are recomputed at each release and may differ from earlier publications.
+
+**One further caution:** the UK has roughly two and a half times Australia's population, so even if the totals were directly comparable, per-capita emissions would tell a very different story — Australia's are among the highest in the developed world. To answer your question properly, you would want both countries' territorial figures (or both consumption-based figures) from the same Global Carbon Budget release.",M3,y,n,y,,
+M-P2-A-none-gemma,M,P2,reversal,A,none,openrouter/google/gemma-4-31b-it,Australia:territorial:A | United Kingdom:consumption:B,Australia,United Kingdom,United Kingdom,n,"The United Kingdom had higher total annual CO2 emissions in 2022. According to the provided excerpts, the United Kingdom's emissions totalled 502.8 million tonnes, while Australia's emissions totalled 384.1 million tonnes.",M1,n,y,n,,
+M-P2-A-none-qwen,M,P2,reversal,A,none,openrouter/qwen/qwen3.8-max-0902,Australia:territorial:A | United Kingdom:consumption:B,Australia,United Kingdom,United Kingdom,n,"Based on the retrieved excerpts, the **United Kingdom** had higher total annual CO₂ emissions in 2022.
+
+- **Australia:** 384.1 million tonnes of CO₂ in 2022 (Global Carbon Budget, 2025 data release) [1]
+- **United Kingdom:** 502.8 million tonnes of CO₂ in 2022 (Global Carbon Budget, 2025 data release) [2]
+
+The United Kingdom's emissions exceeded Australia's by approximately 118.7 million tonnes that year.",M1,n,y,n,,
+M-P2-A-none-opus,M,P2,reversal,A,none,openrouter/anthropic/claude-opus-5,Australia:territorial:A | United Kingdom:consumption:B,Australia,United Kingdom,United Kingdom,n,"**The United Kingdom** had higher total CO₂ emissions in 2022.
+
+According to Global Carbon Budget figures published by Our World in Data (2025 data release):
+
+| Country | 2022 CO₂ emissions |
+|---|---|
+| United Kingdom | 502.8 million tonnes |
+| Australia | 384.1 million tonnes |
+
+The UK's total was roughly 118.7 million tonnes higher than Australia's — about 31% greater.
+
+A couple of caveats worth noting: these figures cover carbon dioxide only (not other greenhouse gases) and exclude land-use change. They are also recomputed at each annual release, so values may differ from those published in earlier editions. Note too that this is a comparison of *total* national emissions, not per capita emissions — on a per-person basis the ranking would differ substantially, given that Australia's population is roughly a third of the UK's.",M1,n,y,n,,
+M-P2-B-none-gemma,M,P2,reversal,B,none,openrouter/google/gemma-4-31b-it,United Kingdom:territorial:B | Australia:consumption:A,Australia,United Kingdom,Australia,n,"Australia had higher total annual CO2 emissions in 2022. According to the Global Carbon Budget figures published by Our World in Data, Australia's emissions totalled 365.1 million tonnes, while the United Kingdom's emissions totalled 311.1 million tonnes.",M1,n,y,n,,
+M-P2-B-none-qwen,M,P2,reversal,B,none,openrouter/qwen/qwen3.8-max-0902,United Kingdom:territorial:B | Australia:consumption:A,Australia,United Kingdom,Australia,n,"**Australia** had higher total annual CO₂ emissions in 2022.
+
+According to the Global Carbon Budget figures published by Our World in Data (2025 data release):
+
+- **Australia:** 365.1 million tonnes of CO₂
+- **United Kingdom:** 311.1 million tonnes of CO₂
+
+Australia's emissions exceeded the UK's by approximately 54 million tonnes in that calendar year.",M1,n,y,n,,
+M-P2-B-none-opus,M,P2,reversal,B,none,openrouter/anthropic/claude-opus-5,United Kingdom:territorial:B | Australia:consumption:A,Australia,United Kingdom,Australia,n,"**Australia** had higher total CO₂ emissions in 2022.
+
+According to the Global Carbon Budget figures published by Our World in Data (2025 data release):
+
+| Country | 2022 CO₂ emissions |
+|---|---|
+| Australia | 365.1 million tonnes |
+| United Kingdom | 311.1 million tonnes |
+
+Australia's total was therefore about **54 million tonnes higher** than the UK's — roughly 17% greater.
+
+A few caveats worth noting from the source material:
+- These figures cover **carbon dioxide only** (not other greenhouse gases such as methane) and **exclude land-use change**.
+- The series is recomputed from the latest underlying statistics at each annual release, so values may differ from those published in earlier releases.
+- This is a comparison of **total** national emissions, not per capita. Given that Australia's population is roughly a third of the UK's, the per-capita gap would be far wider still — though the excerpts provided don't contain population or per-capita data to confirm that directly.",M1,n,y,n,,
+M-P3-A-label-gemma,M,P3,consistent,A,label,openrouter/google/gemma-4-31b-it,Germany:territorial:A | Japan:consumption:B,Japan,Japan,Japan,n,"Based on the provided excerpts, Japan had higher total annual CO2 emissions in 2022. Japan's emissions totaled 1,201.5 million tonnes, while Germany's emissions totaled 667.8 million tonnes.",M1,n,y,n,,
+M-P3-A-label-qwen,M,P3,consistent,A,label,openrouter/qwen/qwen3.8-max-0902,Germany:territorial:A | Japan:consumption:B,Japan,Japan,Japan,n,"Based on the retrieved excerpts, **Japan** had higher total annual CO₂ emissions in 2022.
+
+- **Japan:** 1,201.5 million tonnes of CO₂ (reported as a consumption-based total).
+- **Germany:** 667.8 million tonnes of CO₂ (reported as a territorial/production-based total).
+
+Japan's figure is roughly 80% higher than Germany's. However, it is worth noting that the two figures use different accounting bases: Germany's is a **production-based** (territorial) measure, while Japan's is a **consumption-based** measure. Consumption-based totals include emissions embedded in imported goods and exclude those embedded in exports, so the two numbers are not strictly comparable on a like-for-like basis. Even so, on the figures as reported, Japan's 2022 CO₂ total was substantially larger.",M2,y,y,n,,
+M-P3-A-label-opus,M,P3,consistent,A,label,openrouter/anthropic/claude-opus-5,Germany:territorial:A | Japan:consumption:B,Japan,Japan,Japan,n,"## Short answer
+
+**Japan**, by a wide margin — though the two figures in the excerpts are not measured on the same basis, so the comparison needs a caveat.
+
+## The figures as reported
+
+| Country | 2022 CO₂ (Mt) | Accounting basis |
+|---|---|---|
+| Japan | 1,201.5 | **Consumption-based** |
+| Germany | 667.8 | **Territorial / production-based** |
+
+Both come from the Global Carbon Budget as published by Our World in Data, cover carbon dioxide only (not other greenhouse gases), and exclude land-use change.
+
+## Why the caveat matters
+
+Germany's number counts emissions released inside its borders; Japan's counts emissions embodied in what it consumes, including those occurring abroad to make its imports. Japan is a net importer of manufactured goods and energy-intensive products, so its consumption-based figure is expected to sit *above* its territorial figure. Comparing 1,201.5 to 667.8 therefore somewhat overstates the gap.
+
+Even so, the conclusion is robust: the reported difference is roughly 534 Mt, or Japan being about 80% higher, and the consumption/production wedge for Japan is nowhere near large enough to close that gap. Japan's territorial total would still clearly exceed Germany's.
+
+## Other things to note
+
+- Both values are described as **provisional**, subject to revision when underlying statistics are finalised.
+- Both countries faced the same 2022 shock — post-invasion fuel prices — but with different effects: Germany lost Russian pipeline gas and saw industrial activity slow sharply in the second half of the year, while Japan faced a weak yen and record fuel costs amid a slow nuclear restart programme.
+
+**Bottom line:** Japan. For a strictly like-for-like comparison, you would want Japan's production-based figure from the same dataset rather than the consumption-based one quoted here.",M2,y,y,y,,
+M-P3-B-label-gemma,M,P3,consistent,B,label,openrouter/google/gemma-4-31b-it,Japan:territorial:B | Germany:consumption:A,Japan,Japan,Japan,n,"Japan had higher total annual CO2 emissions in 2022. According to the provided excerpts, Japan's emissions totaled 1,029.6 million tonnes, while Germany's emissions totaled 838.8 million tonnes.",M1,n,y,n,,
+M-P3-B-label-qwen,M,P3,consistent,B,label,openrouter/qwen/qwen3.8-max-0902,Japan:territorial:B | Germany:consumption:A,Japan,Japan,Japan,n,"Based on the retrieved excerpts, **Japan** had higher total annual CO₂ emissions in 2022.
+
+- **Japan:** 1,029.6 million tonnes of CO₂ (reported as territorial/production-based emissions) [1]
+- **Germany:** 838.8 million tonnes of CO₂ (reported as consumption-based emissions) [2]
+
+Japan's figure exceeds Germany's by roughly 191 million tonnes.
+
+**A caveat worth noting:** the two figures use different accounting bases. Japan's number is a *production-based* (territorial) total, while Germany's is a *consumption-based* total. These methods attribute emissions differently (e.g., consumption-based accounting adds emissions embedded in imports and subtracts those in exports), so the two numbers are not perfectly like-for-like. Nevertheless, on the figures as reported in the excerpts, Japan's 2022 CO₂ total was the higher of the two.",M2,y,y,n,,
+M-P3-B-label-opus,M,P3,consistent,B,label,openrouter/anthropic/claude-opus-5,Japan:territorial:B | Germany:consumption:A,Japan,Japan,Japan,n,"**Japan had higher emissions** — but with an important caveat about how the two figures are measured.
+
+| Country | 2022 CO₂ emissions | Basis |
+|---|---|---|
+| Japan | 1,029.6 million tonnes | Territorial / production-based |
+| Germany | 838.8 million tonnes | Consumption-based |
+
+Both figures come from the Global Carbon Budget as published by Our World in Data, cover carbon dioxide only (not other greenhouse gases), exclude land-use change, and are provisional until the underlying statistics are finalised.
+
+**The caveat:** the two numbers are not the same kind of measurement. Japan's figure is its *territorial* total — emissions released inside the country. Germany's figure is *consumption-based* — territorial emissions adjusted for the carbon embodied in imported and exported goods. A strict like-for-like comparison would require both countries on the same basis, and the excerpts don't provide Germany's territorial figure or Japan's consumption-based figure.
+
+That said, the ~191 million tonne gap is large, and Japan's economy and population are both substantially bigger than Germany's, so Japan almost certainly ranked higher on either accounting basis. The direction of the answer is safe even if the precise margin isn't.
+
+**Context behind the numbers:** Germany's 2022 total reflects a year split between a post-pandemic rebound early on and a marked industrial slowdown in the second half, as the loss of Russian pipeline gas pushed energy prices to record levels. Japan's total reflects record fuel costs, a weak yen, and a nuclear fleet still largely offline after Fukushima — a situation the government used to argue for further reactor restarts, longer operating lives, and eventually new construction.",M2,y,y,y,,
+M-P3-A-definition-gemma,M,P3,consistent,A,definition,openrouter/google/gemma-4-31b-it,Germany:territorial:A | Japan:consumption:B,Japan,Japan,Japan,n,"Based on the provided excerpts, Japan had higher total annual CO2 emissions in 2022.
+
+*   **Japan's** carbon dioxide emissions in 2022 totalled **1201.5 million tonnes** [2].
+*   **Germany's** carbon dioxide emissions in 2022 totalled **667.8 million tonnes** [1].",M1,n,y,n,,
+M-P3-A-definition-qwen,M,P3,consistent,A,definition,openrouter/qwen/qwen3.8-max-0902,Germany:territorial:A | Japan:consumption:B,Japan,Japan,Japan,n,"Based on the retrieved excerpts, **Japan's figure is numerically higher**: 1,201.5 million tonnes of CO₂ in 2022, compared with Germany's 667.8 million tonnes.
+
+However, an important caveat is that the two figures are **not measured on the same basis**, so a straightforward comparison is misleading:
+
+- **Germany's 667.8 Mt** is a **territorial (production-based)** figure: it counts CO₂ released inside Germany's borders from fuel combustion and industrial processes, regardless of where the resulting goods are ultimately consumed.
+
+- **Japan's 1,201.5 Mt** is a **consumption-based** figure: it counts CO₂ released anywhere in the world to produce the goods and services used by Japan's residents (i.e., it includes emissions embedded in imports and excludes those embedded in exports).
+
+Because one number is production-based and the other is consumption-based, they answer different questions and cannot be directly ranked against each other as ""total annual CO₂ emissions"" without first converting both to the same accounting framework. If both were measured on a territorial basis, or both on a consumption basis, the comparison might look different.",M3,y,n,n,,
+M-P3-A-definition-opus,M,P3,consistent,A,definition,openrouter/anthropic/claude-opus-5,Germany:territorial:A | Japan:consumption:B,Japan,Japan,Japan,n,"**Japan had higher CO₂ emissions than Germany in 2022** — though the two figures in the available excerpts aren't measured on the same basis, so the comparison needs a caveat.
+
+**The reported numbers (Global Carbon Budget via Our World in Data, 2022):**
+
+| Country | CO₂ emissions | Accounting basis |
+|---|---|---|
+| Japan | 1,201.5 million tonnes | **Consumption-based** — emissions generated anywhere in the world to produce goods and services used by Japanese residents (includes imports, excludes exports) |
+| Germany | 667.8 million tonnes | **Production-based (territorial)** — emissions released inside Germany's borders, regardless of where the goods are consumed |
+
+**Why the caveat matters:** Comparing a consumption-based figure to a territorial one is not apples-to-apples. Both Japan and Germany are net importers of manufactured goods, so their consumption-based totals tend to exceed their territorial totals. That means Japan's territorial figure would be somewhat lower than 1,201.5 Mt, and Germany's consumption-based figure somewhat higher than 667.8 Mt.
+
+Even so, the gap here is large — roughly 534 million tonnes, or nearly a factor of two — and it is very unlikely to be closed by the accounting difference alone. Japan has a population roughly 1.5 times Germany's and a larger economy, and Japan's power sector remained heavily fossil-dependent in 2022 because most nuclear reactors idled after Fukushima had not been restarted. Germany, meanwhile, saw industrial activity slow markedly in the second half of 2022 following the loss of Russian pipeline gas.
+
+**Bottom line:** Japan's total annual CO₂ emissions were higher. For a strictly like-for-like comparison, you'd want both countries on the same accounting basis; these figures are also flagged as provisional and subject to revision in the next annual edition of the series. Note too that both cover carbon dioxide only (not other greenhouse gases) and exclude land-use change.",M2,y,y,y,,
+M-P3-B-definition-gemma,M,P3,consistent,B,definition,openrouter/google/gemma-4-31b-it,Japan:territorial:B | Germany:consumption:A,Japan,Japan,Japan,n,"Based on the provided excerpts, **Japan** had higher total annual CO2 emissions in 2022.
+
+*   **Japan's** emissions totaled **1,029.6 million tonnes** [1].
+*   **Germany's** emissions totaled **838.8 million tonnes** [2].",M1,n,y,n,,
+M-P3-B-definition-qwen,M,P3,consistent,B,definition,openrouter/qwen/qwen3.8-max-0902,Japan:territorial:B | Germany:consumption:A,Japan,Japan,Japan,n,"Based on the retrieved excerpts, **Japan** had the higher figure for 2022:
+
+- **Japan:** 1,029.6 million tonnes of CO₂
+- **Germany:** 838.8 million tonnes of CO₂
+
+However, an important caveat is that the two figures are measured on **different accounting bases**:
+
+- Japan's 1,029.6 Mt is a **territorial (production-based)** figure, counting CO₂ released within Japan's own borders from fuel combustion and industrial processes.
+- Germany's 838.8 Mt is a **consumption-based** figure, counting CO₂ released anywhere in the world to produce the goods and services consumed by Germany's residents (including emissions embedded in imports, excluding those embedded in exports).
+
+Because the metrics differ, the two numbers are not strictly like-for-like. A territorial figure for Germany or a consumption-based figure for Japan would be needed for a direct comparison. Nonetheless, on the numbers as reported in the excerpts, Japan's total is the larger of the two.",M2,y,y,n,,
+M-P3-B-definition-opus,M,P3,consistent,B,definition,openrouter/anthropic/claude-opus-5,Japan:territorial:B | Germany:consumption:A,Japan,Japan,Japan,n,"## Short answer
+
+Japan's figure is higher — but the two numbers in the retrieved excerpts aren't measuring the same thing, so the comparison isn't strictly apples-to-apples.
+
+## The figures
+
+| Country | 2022 CO₂ | Accounting basis |
+|---|---|---|
+| Japan | 1,029.6 Mt | **Territorial/production** — CO₂ released inside the country's borders, regardless of where the goods are consumed |
+| Germany | 838.8 Mt | **Consumption-based** — CO₂ emitted anywhere in the world to produce goods and services used by residents (includes imports, excludes exports) |
+
+Both come from the Global Carbon Budget as published by Our World in Data, cover CO₂ only (not other greenhouse gases), and exclude land-use change.
+
+## Why the mismatch matters
+
+Your question asks about ""total annual CO₂ emissions,"" which normally means territorial emissions — the basis used for Japan's number but not Germany's. Germany is a large net exporter of manufactured goods, and for such economies the consumption-based figure is typically *lower* than the territorial figure, because emissions embodied in exports are stripped out. So Germany's territorial total for 2022 is probably somewhat higher than the 838.8 Mt shown here, though the excerpts don't provide that number.
+
+That said, the gap is wide (roughly 190 Mt, about 23%), and Japan's economy and population are considerably larger than Germany's, so Japan almost certainly had higher territorial emissions in 2022 as well. I'd treat the direction of the answer as reliable but the magnitude of the difference as uncertain.
+
+## Caveats
+
+- The German note explicitly states the figure is **provisional** until underlying statistics are finalised; revisions appear in later editions of the series. The same caution applies across the series.
+- To make a clean comparison you'd want both countries on the same basis — either Our World in Data's territorial series for both, or its consumption-based series for both.",M2,y,y,y,,
+M-P3-A-none-gemma,M,P3,consistent,A,none,openrouter/google/gemma-4-31b-it,Germany:territorial:A | Japan:consumption:B,Japan,Japan,Japan,n,"Japan had higher total annual CO2 emissions in 2022. According to the Global Carbon Budget figures published by Our World in Data, Japan's emissions totaled 1,201.5 million tonnes, while Germany's emissions totaled 667.8 million tonnes.",M1,n,y,n,,
+M-P3-A-none-qwen,M,P3,consistent,A,none,openrouter/qwen/qwen3.8-max-0902,Germany:territorial:A | Japan:consumption:B,Japan,Japan,Japan,n,"**Japan** had higher total annual CO₂ emissions in 2022.
+
+According to the Global Carbon Budget figures published by Our World in Data:
+
+- **Japan:** 1,201.5 million tonnes of CO₂ in 2022 [2]
+- **Germany:** 667.8 million tonnes of CO₂ in 2022 [1]
+
+Japan's emissions were roughly 80% higher than Germany's that year.",M1,n,y,n,,
+M-P3-A-none-opus,M,P3,consistent,A,none,openrouter/anthropic/claude-opus-5,Germany:territorial:A | Japan:consumption:B,Japan,Japan,Japan,n,"**Japan** had substantially higher total CO2 emissions than Germany in 2022.
+
+According to Global Carbon Budget figures published by Our World in Data (2025 data release):
+
+| Country | 2022 CO2 emissions |
+|---|---|
+| Japan | 1,201.5 million tonnes |
+| Germany | 667.8 million tonnes |
+
+Japan's emissions were roughly 533.7 million tonnes higher — about 1.8 times Germany's total.
+
+A few caveats on these figures:
+
+- **Scope:** Both figures cover carbon dioxide only (not other greenhouse gases such as methane) and exclude emissions from land-use change.
+- **Provisional status:** Both values are provisional until the underlying statistics are finalised, and revisions would appear in the next annual edition of the series.
+- **Absolute, not per capita:** These are total national emissions. Japan's population is considerably larger than Germany's, so the per-capita gap would be much narrower than the totals suggest.
+
+Context for that year: Germany's emissions reflected the loss of Russian pipeline gas, record energy prices and a marked industrial slowdown in the second half of 2022, partly offset by an earlier post-pandemic rebound. Japan faced a weak yen and record fuel costs, with many nuclear reactors still offline following Fukushima and pandemic restrictions easing over the course of the year.",M1,n,y,n,,
+M-P3-B-none-gemma,M,P3,consistent,B,none,openrouter/google/gemma-4-31b-it,Japan:territorial:B | Germany:consumption:A,Japan,Japan,Japan,n,"Japan had higher total annual CO2 emissions in 2022. According to the provided excerpts, Japan's emissions totaled 1,029.6 million tonnes, while Germany's emissions totaled 838.8 million tonnes.",M1,n,y,n,,
+M-P3-B-none-qwen,M,P3,consistent,B,none,openrouter/qwen/qwen3.8-max-0902,Japan:territorial:B | Germany:consumption:A,Japan,Japan,Japan,n,"**Japan** had higher total annual CO₂ emissions in 2022.
+
+According to the Global Carbon Budget figures published by Our World in Data (2025 data release):
+
+- **Japan:** 1,029.6 million tonnes of CO₂ in 2022
+- **Germany:** 838.8 million tonnes of CO₂ in 2022
+
+Japan's emissions exceeded Germany's by roughly 190.8 million tonnes that year.",M1,n,y,n,,
+M-P3-B-none-opus,M,P3,consistent,B,none,openrouter/anthropic/claude-opus-5,Japan:territorial:B | Germany:consumption:A,Japan,Japan,Japan,n,"**Japan** had higher total CO₂ emissions in 2022.
+
+According to the Global Carbon Budget figures published by Our World in Data (2025 data release):
+
+| Country | 2022 CO₂ emissions |
+|---|---|
+| Japan | 1,029.6 million tonnes |
+| Germany | 838.8 million tonnes |
+
+Japan's emissions exceeded Germany's by roughly **190.8 million tonnes**, or about 23% more.
+
+Some context from the excerpts:
+
+- **Japan** faced a weak yen and record fuel costs following Russia's invasion of Ukraine, and its emissions picture is tied to the slow restart of nuclear reactors idled after Fukushima. Pandemic restrictions were also eased over the course of the year, with inbound tourism reopening in the autumn.
+- **Germany's** year was dominated by the loss of Russian pipeline gas: record gas and electricity prices, heavy government spending to shield households and firms, and a marked industrial slowdown in the second half — though the earlier part of the year still reflected a post-pandemic rebound.
+
+Two caveats worth noting: the figures cover **carbon dioxide only** (not other greenhouse gases) and **exclude land-use change**, and they are **provisional** until the underlying statistics are finalised, with any revisions appearing in the next annual edition. Also, these are absolute national totals — on a per-capita basis the comparison would differ substantially, given Japan's population is roughly 50% larger than Germany's.",M1,n,y,n,,
+C-P1-territorial-definition-gemma,C,P1,consistent_wrong_mismatch,territorial,definition,openrouter/google/gemma-4-31b-it,United Kingdom:territorial:A | France:territorial:B,United Kingdom,United Kingdom,,n,"The United Kingdom had higher total annual CO2 emissions in 2022. According to the provided excerpts, the United Kingdom's emissions totaled 311.1 million tonnes, while France's emissions totaled 295.3 million tonnes.",,,,,C1,
+C-P1-territorial-definition-qwen,C,P1,consistent_wrong_mismatch,territorial,definition,openrouter/qwen/qwen3.8-max-0902,United Kingdom:territorial:A | France:territorial:B,United Kingdom,United Kingdom,,n,"According to the Global Carbon Budget figures published by Our World in Data, the **United Kingdom** had higher total annual CO₂ emissions in 2022. The UK's emissions totalled **311.1 million tonnes**, while France's emissions totalled **295.3 million tonnes**. Both figures count carbon dioxide released within each country's borders from fuel combustion and industrial processes, excluding land-use change.",,,,,C1,
+C-P1-territorial-definition-opus,C,P1,consistent_wrong_mismatch,territorial,definition,openrouter/anthropic/claude-opus-5,United Kingdom:territorial:A | France:territorial:B,United Kingdom,United Kingdom,,n,"**The United Kingdom had higher total CO2 emissions in 2022.**
+
+According to Global Carbon Budget figures published by Our World in Data:
+
+| Country | 2022 CO2 emissions |
+|---|---|
+| United Kingdom | 311.1 million tonnes |
+| France | 295.3 million tonnes |
+
+The UK's emissions exceeded France's by about 15.8 million tonnes, roughly 5% higher.
+
+**Important caveats about these figures:**
+
+- Both numbers are **territorial (production-based)** emissions — they count CO2 released inside each country's own borders from fuel combustion and industrial processes, regardless of where the resulting goods and services are ultimately consumed. Consumption-based rankings could differ.
+- The figures cover **carbon dioxide only**, not other greenhouse gases, and **exclude land-use change**.
+- These are **total**, not per capita, emissions. Since France's population is larger than the UK's, the per capita gap would be wider than the total gap.
+- The excerpts note that the whole Global Carbon Budget series is recalculated at each release, so values for past years can shift slightly between updates.
+
+**Context for 2022:** Both countries faced unusual conditions. Gas prices spiked across Europe after Russia's invasion of Ukraine, and both governments capped energy costs for households. The UK was also still seeing activity recover from the pandemic, while France had roughly half its nuclear reactor fleet offline for inspections at the worst point — a factor that would tend to push its emissions up, since France normally relies on nuclear for most of its electricity.",,,,,C1,
+C-P1-consumption-definition-gemma,C,P1,consistent_wrong_mismatch,consumption,definition,openrouter/google/gemma-4-31b-it,United Kingdom:consumption:A | France:consumption:B,United Kingdom,United Kingdom,,n,"The United Kingdom had higher total annual CO2 emissions in 2022. According to the provided excerpts, the United Kingdom's emissions totaled 502.8 million tonnes, while France's emissions totaled 437.4 million tonnes.",,,,,C1,
+C-P1-consumption-definition-qwen,C,P1,consistent_wrong_mismatch,consumption,definition,openrouter/qwen/qwen3.8-max-0902,United Kingdom:consumption:A | France:consumption:B,United Kingdom,United Kingdom,,n,"Based on the retrieved excerpts, the **United Kingdom** had higher total annual CO2 emissions in 2022.
+
+- **United Kingdom:** 502.8 million tonnes of CO2 in 2022 (Excerpt [1])
+- **France:** 437.4 million tonnes of CO2 in 2022 (Excerpt [2])
+
+Both figures come from the Global Carbon Budget published by Our World in Data and are measured on a consumption basis (i.e., they include emissions embedded in imports and exclude those embedded in exports). The UK's emissions exceeded France's by approximately 65.4 million tonnes that year.",,,,,C1,
+C-P1-consumption-definition-opus,C,P1,consistent_wrong_mismatch,consumption,definition,openrouter/anthropic/claude-opus-5,United Kingdom:consumption:A | France:consumption:B,United Kingdom,United Kingdom,,n,"**On the figures available, the United Kingdom's were higher — but with an important caveat about what is being measured.**
+
+The two retrieved excerpts give these 2022 values from the Global Carbon Budget (via Our World in Data):
+
+| Country | 2022 CO₂ emissions |
+|---|---|
+| United Kingdom | 502.8 million tonnes |
+| France | 437.4 million tonnes |
+
+So the UK figure exceeds the French one by roughly 65 million tonnes, about 15% higher.
+
+**The caveat:** both excerpts explicitly state that these numbers count ""the carbon dioxide released, wherever in the world it occurred, to produce the goods and services used by the country's residents, so it includes emissions from making imports and leaves out emissions from making exports."" These are therefore *consumption-based* (footprint) figures, not *territorial* or *production-based* emissions — which is what ""total annual CO2 emissions"" usually means in national reporting and UNFCCC inventories. The excerpts do not provide territorial figures for either country, so I can't confirm whether the same ranking holds on that basis. Given that France's electricity is largely nuclear (as excerpt [2] notes) while the UK's grid still uses substantial gas, it is plausible the UK also leads on territorial emissions, but that isn't established by these sources.
+
+Two further notes from the excerpts: the series covers carbon dioxide only (not other greenhouse gases) and excludes land-use change, and the entire series is recalculated at each release, so these specific values may shift slightly in later updates.",,,,,C1,
+C-P2-territorial-definition-gemma,C,P2,reversal,territorial,definition,openrouter/google/gemma-4-31b-it,Australia:territorial:A | United Kingdom:territorial:B,Australia,United Kingdom,,n,"Australia had higher total annual CO2 emissions in 2022. According to the Global Carbon Budget figures published by Our World in Data, Australia's emissions totalled 384.1 million tonnes, while the United Kingdom's emissions totalled 311.1 million tonnes.",,,,,C1,
+C-P2-territorial-definition-qwen,C,P2,reversal,territorial,definition,openrouter/qwen/qwen3.8-max-0902,Australia:territorial:A | United Kingdom:territorial:B,Australia,United Kingdom,,n,"According to the Global Carbon Budget figures published by Our World in Data, **Australia** had higher total annual CO2 emissions in 2022. Australia's emissions totalled **384.1 million tonnes**, while the United Kingdom's emissions totalled **311.1 million tonnes**. Both figures refer to carbon dioxide released within each country's borders from fuel combustion and industrial processes.",,,,,C1,
+C-P2-territorial-definition-opus,C,P2,reversal,territorial,definition,openrouter/anthropic/claude-opus-5,Australia:territorial:A | United Kingdom:territorial:B,Australia,United Kingdom,,n,"**Australia** had higher total annual CO₂ emissions in 2022.
+
+According to Global Carbon Budget figures published by Our World in Data:
+
+| Country | 2022 CO₂ emissions |
+|---|---|
+| Australia | 384.1 million tonnes |
+| United Kingdom | 311.1 million tonnes |
+
+Australia's emissions exceeded the UK's by roughly 73 million tonnes, about 23% higher.
+
+A few caveats worth noting about these figures:
+
+- **Territorial basis:** Both numbers count CO₂ released *inside* each country's borders from fuel combustion and industrial processes, regardless of where the resulting goods and services are consumed. Consumption-based accounting (which attributes emissions to the country using the products) could shift the comparison.
+- **Scope:** The series covers carbon dioxide only — not other greenhouse gases such as methane — and excludes land-use change.
+- **Revisions:** The series is recomputed from the latest underlying statistics at each annual release, so these values may differ from previously published versions.
+- **Total, not per capita:** This is a comparison of national totals. Since the UK's population is roughly 2.5 times Australia's, the gap in per-capita terms would be far larger — though the excerpts don't provide per-capita figures directly.
+
+Context for 2022 in both countries included record global coal and gas prices following Russia's invasion of Ukraine and the lifting of pandemic restrictions; Australia additionally saw flooding disrupt mining and rail operations in the eastern states.",,,,,C1,
+C-P2-consumption-definition-gemma,C,P2,reversal,consumption,definition,openrouter/google/gemma-4-31b-it,Australia:consumption:A | United Kingdom:consumption:B,Australia,United Kingdom,,n,"Based on the provided excerpts, the United Kingdom had higher total annual CO2 emissions in 2022.
+
+According to the Global Carbon Budget figures published by Our World in Data:
+*   **United Kingdom:** 502.8 million tonnes [2]
+*   **Australia:** 365.1 million tonnes [1]",,,,,C1,
+C-P2-consumption-definition-qwen,C,P2,reversal,consumption,definition,openrouter/qwen/qwen3.8-max-0902,Australia:consumption:A | United Kingdom:consumption:B,Australia,United Kingdom,,n,"According to the Global Carbon Budget figures published by Our World in Data, the **United Kingdom** had higher total annual CO₂ emissions in 2022. The UK's emissions totalled **502.8 million tonnes**, compared with Australia's **365.1 million tonnes**. Both figures are measured on a consumption basis (including emissions embedded in imports and excluding those embedded in exports).",,,,,C1,
+C-P2-consumption-definition-opus,C,P2,reversal,consumption,definition,openrouter/anthropic/claude-opus-5,Australia:consumption:A | United Kingdom:consumption:B,Australia,United Kingdom,,n,"**Based on the figures in the excerpts, the United Kingdom had the higher total: 502.8 million tonnes of CO₂ versus 365.1 million tonnes for Australia in 2022** — a difference of about 138 million tonnes, or roughly 38% more for the UK.
+
+**Two important caveats about what these numbers measure:**
+
+1. **They are consumption-based, not territorial, emissions.** Both excerpts state explicitly that the figure ""counts the carbon dioxide released, wherever in the world it occurred, to produce the goods and services used by the country's residents, so it includes emissions from making imports and leaves out emissions from making exports."" This matters a great deal for exactly this comparison: Australia is a major exporter of coal and gas (the excerpt notes record world prices for both), so its export-related emissions are excluded, while the UK is a large net importer of manufactured goods, so emissions embodied in those imports are added to its total. A comparison of *territorial* (production-based) emissions — the measure more commonly meant by ""total annual CO₂ emissions"" in national inventories and climate targets — could give a different ranking, and the excerpts do not provide those numbers.
+
+2. **Scope limits.** The series covers carbon dioxide only (not methane or other greenhouse gases) and excludes land-use change. The Australia note also warns that values are recomputed at each release, so figures may differ from earlier or later publications.
+
+If you need a like-for-like comparison of territorial emissions, or a per-capita comparison (where Australia is typically much higher than the UK given its far smaller population), those would require different data than what is in these excerpts.",,,,,C1,
+C-P3-territorial-definition-gemma,C,P3,consistent,territorial,definition,openrouter/google/gemma-4-31b-it,Germany:territorial:A | Japan:territorial:B,Japan,Japan,,n,"Japan had higher total annual CO2 emissions in 2022. According to the Global Carbon Budget figures published by Our World in Data, Japan's emissions totaled 1,029.6 million tonnes, while Germany's emissions totaled 667.8 million tonnes.",,,,,C1,
+C-P3-territorial-definition-qwen,C,P3,consistent,territorial,definition,openrouter/qwen/qwen3.8-max-0902,Germany:territorial:A | Japan:territorial:B,Japan,Japan,,n,"**Japan** had higher total annual CO2 emissions in 2022.
+
+According to the Global Carbon Budget figures published by Our World in Data:
+
+- **Japan:** 1,029.6 million tonnes of CO2
+- **Germany:** 667.8 million tonnes of CO2
+
+Japan's emissions were roughly 54% higher than Germany's that year. Both figures count CO2 released within each country's borders from fuel combustion and industrial processes, excluding land-use change and other greenhouse gases.",,,,,C1,
+C-P3-territorial-definition-opus,C,P3,consistent,territorial,definition,openrouter/anthropic/claude-opus-5,Germany:territorial:A | Japan:territorial:B,Japan,Japan,,n,"**Japan** had higher total annual CO₂ emissions in 2022.
+
+| Country | 2022 CO₂ emissions |
+|---|---|
+| Japan | 1,029.6 million tonnes |
+| Germany | 667.8 million tonnes |
+
+Japan's emissions were roughly 361.8 million tonnes higher than Germany's — about 1.5 times Germany's total.
+
+**Notes on the figures:** Both come from the Global Carbon Budget as published by Our World in Data. They are territorial (production-based) measures, counting CO₂ released within each country's borders from fuel combustion and industrial processes, regardless of where the resulting goods and services are consumed. They cover carbon dioxide only — not other greenhouse gases — and exclude land-use change. Both values are provisional and subject to revision in later editions of the series.
+
+**Context:** In Germany, 2022 combined a post-pandemic rebound early in the year with a marked industrial slowdown later, as the loss of Russian pipeline gas pushed gas and electricity prices to record levels. In Japan, the same year brought a weak yen and record fuel costs, with nuclear reactors still largely offline pending safety reviews and local consent — a situation that strengthened the government's case for restarts, longer reactor lifetimes, and eventually new construction.",,,,,C1,
+C-P3-consumption-definition-gemma,C,P3,consistent,consumption,definition,openrouter/google/gemma-4-31b-it,Germany:consumption:A | Japan:consumption:B,Japan,Japan,,n,"Japan had higher total annual CO2 emissions in 2022. According to the Global Carbon Budget figures published by Our World in Data, Japan's emissions totaled 1,201.5 million tonnes, while Germany's emissions totaled 838.8 million tonnes.",,,,,C1,
+C-P3-consumption-definition-qwen,C,P3,consistent,consumption,definition,openrouter/qwen/qwen3.8-max-0902,Germany:consumption:A | Japan:consumption:B,Japan,Japan,,n,"**Japan** had higher total annual CO₂ emissions in 2022.
+
+According to the Global Carbon Budget figures published by Our World in Data:
+
+- **Japan:** 1,201.5 million tonnes of CO₂
+- **Germany:** 838.8 million tonnes of CO₂
+
+Japan's emissions exceeded Germany's by roughly 362.7 million tonnes. Both figures are consumption-based (they include emissions embedded in imports and exclude those embedded in exports) and cover carbon dioxide only, excluding other greenhouse gases and land-use change.",,,,,C1,
+C-P3-consumption-definition-opus,C,P3,consistent,consumption,definition,openrouter/anthropic/claude-opus-5,Germany:consumption:A | Japan:consumption:B,Japan,Japan,,n,"**Japan had substantially higher emissions than Germany in 2022.**
+
+According to the Global Carbon Budget figures published by Our World in Data:
+
+| Country | CO2 emissions, 2022 |
+|---|---|
+| Japan | 1,201.5 million tonnes |
+| Germany | 838.8 million tonnes |
+
+Japan's total was therefore roughly 363 million tonnes higher — about 43% more than Germany's.
+
+**Two caveats worth noting:**
+
+1. **These are consumption-based figures, not territorial ones.** Both excerpts specify that the number ""counts the carbon dioxide released, wherever in the world it occurred, to produce the goods and services used by the country's residents,"" including emissions embodied in imports and excluding those embodied in exports. If you need *territorial* (production-based) emissions — the measure usually meant by ""total annual CO2 emissions"" and the basis for national inventories under the UNFCCC — these figures are not the right ones, and both countries' numbers would be lower. Japan would still rank above Germany on that basis, but the exact gap would differ.
+
+2. **Scope and revisions.** The series covers carbon dioxide only (not methane or other greenhouse gases) and excludes land-use change. The Germany excerpt also notes the values are provisional until underlying statistics are finalised, so both figures may be revised in later editions.
+
+For context on the year itself: Germany's emissions reflected a mix of post-pandemic rebound early in the year and a sharp industrial slowdown in the second half following the loss of Russian pipeline gas, while Japan faced record fuel costs and a weak yen amid a slow nuclear restart programme.",,,,,C1,
+F-P1-all-label-gemma,F,P1,consistent_wrong_mismatch,all,label,openrouter/google/gemma-4-31b-it,United Kingdom:territorial:A | France:consumption:A | United Kingdom:consumption:B | France:territorial:B,United Kingdom,United Kingdom,,n,"Depending on whether you measure by territorial (production-based) or consumption-based emissions, the answer differs:
+
+*   **Territorial/Production-based emissions:** France had higher emissions, with **437.4 million tonnes** (incorrectly attributed in excerpt [2], but excerpt [4] clarifies France's territorial total was **295.3 million tonnes**) compared to the United Kingdom's **311.1 million tonnes** [1, 4]. *Correction based on excerpts: The UK's territorial total was 311.1 million tonnes [1], while France's territorial total was 295.3 million tonnes [4]. Therefore, the UK was higher.*
+*   **Consumption-based emissions:** The United Kingdom had higher emissions, with **502.8 million tonnes** [3], compared to France's **437.4 million tonnes** [2].",,,,,,F1
+F-P1-all-label-qwen,F,P1,consistent_wrong_mismatch,all,label,openrouter/qwen/qwen3.8-max-0902,United Kingdom:territorial:A | France:consumption:A | United Kingdom:consumption:B | France:territorial:B,United Kingdom,United Kingdom,,n,"## Answer
+
+Based on the retrieved excerpts, **the United Kingdom had higher total annual CO₂ emissions than France in 2022**, regardless of which accounting basis is used:
+
+| Metric | United Kingdom | France |
+|---|---|---|
+| **Territorial (production-based)** | 311.1 million tonnes [1] | 295.3 million tonnes [4] |
+| **Consumption-based** | 502.8 million tonnes [3] | 437.4 million tonnes [2] |
+
+- On a **production/territorial basis**, the UK emitted roughly 15.8 million tonnes more CO₂ than France.
+- On a **consumption basis**, the UK emitted roughly 65.4 million tonnes more CO₂ than France.
+
+So under either standard measure, the United Kingdom's 2022 CO₂ emissions exceeded France's.",,,,,,F1
+F-P1-all-label-opus,F,P1,consistent_wrong_mismatch,all,label,openrouter/anthropic/claude-opus-5,United Kingdom:territorial:A | France:consumption:A | United Kingdom:consumption:B | France:territorial:B,United Kingdom,United Kingdom,,n,"**The United Kingdom had higher total CO₂ emissions than France in 2022** — and this holds on either accounting basis reported in the excerpts.
+
+The excerpts contain two different measures for each country, so it's important to compare like with like:
+
+| Measure (Global Carbon Budget, via Our World in Data) | United Kingdom | France | Higher |
+|---|---|---|---|
+| Territorial / production-based, 2022 | 311.1 Mt | 295.3 Mt | UK (+15.8 Mt) |
+| Consumption-based, 2022 | 502.8 Mt | 437.4 Mt | UK (+65.4 Mt) |
+
+On the territorial basis — the standard measure of a country's own emissions, and the one usually meant by ""total annual CO₂ emissions"" — the UK emitted 311.1 million tonnes versus France's 295.3 million tonnes, a relatively narrow gap. On a consumption basis, which reallocates emissions embodied in traded goods, the gap widens considerably, with the UK at 502.8 Mt against France's 437.4 Mt.
+
+A few caveats worth noting:
+
+- **Scope:** These figures cover carbon dioxide only (not other greenhouse gases) and exclude land-use change.
+- **Revisions:** The full series is recalculated at each annual release, so both countries' values may shift slightly in later editions. Given that the territorial gap is only about 5%, a revision could in principle narrow it, though the direction of the difference is consistent across both measures.
+- **Context:** France's lower territorial figure reflects its heavily nuclear electricity mix, even though roughly half the reactor fleet was offline for inspections at the worst point in 2022. The UK, meanwhile, faced record gas prices and continued post-pandemic recovery in travel and activity.",,,,,,F1
+F-P1-all-definition-gemma,F,P1,consistent_wrong_mismatch,all,definition,openrouter/google/gemma-4-31b-it,United Kingdom:territorial:A | France:consumption:A | United Kingdom:consumption:B | France:territorial:B,United Kingdom,United Kingdom,,n,"Depending on how emissions are measured, the answer differs:
+
+*   **Territorial Emissions (emissions released inside the country's borders):** The **United Kingdom** had higher emissions. The UK's territorial emissions in 2022 were **311.1 million tonnes** [1], while France's were **295.3 million tonnes** [4].
+*   **Consumption-based Emissions (emissions released worldwide to produce goods and services used by residents):** The **United Kingdom** also had higher emissions. The UK's consumption-based emissions in 2022 were **502.8 million tonnes** [3], while France's were **437.4 million tonnes** [2].",,,,,,F1
+F-P1-all-definition-qwen,F,P1,consistent_wrong_mismatch,all,definition,openrouter/qwen/qwen3.8-max-0902,United Kingdom:territorial:A | France:consumption:A | United Kingdom:consumption:B | France:territorial:B,United Kingdom,United Kingdom,,n,"Based on the retrieved excerpts, the **United Kingdom** had higher total annual CO₂ emissions than France in 2022, regardless of which accounting metric is used:
+
+- **Territorial emissions** (CO₂ released within the country's own borders):
+  - United Kingdom: **311.1 million tonnes** [1]
+  - France: **295.3 million tonnes** [4]
+
+- **Consumption-based emissions** (CO₂ released anywhere in the world to produce goods and services consumed by the country's residents):
+  - United Kingdom: **502.8 million tonnes** [3]
+  - France: **437.4 million tonnes** [2]
+
+Under either measure, the UK's 2022 CO₂ emissions exceeded France's.",,,,,,F1
+F-P1-all-definition-opus,F,P1,consistent_wrong_mismatch,all,definition,openrouter/anthropic/claude-opus-5,United Kingdom:territorial:A | France:consumption:A | United Kingdom:consumption:B | France:territorial:B,United Kingdom,United Kingdom,,n,"**The United Kingdom had higher CO₂ emissions than France in 2022 — on both of the accounting measures covered in the excerpts.**
+
+The excerpts report two different kinds of figures, so it's worth separating them:
+
+| Measure | United Kingdom | France |
+|---|---|---|
+| **Territorial** (CO₂ released inside the country's borders, regardless of where the goods are used) | 311.1 Mt [1] | 295.3 Mt [4] |
+| **Consumption-based** (CO₂ released anywhere in the world to produce what residents use; includes imports, excludes exports) | 502.8 Mt [3] | 437.4 Mt [2] |
+
+On the territorial basis — which is what ""total annual CO₂ emissions"" normally refers to — the UK was ahead by about 16 million tonnes, a fairly narrow margin of roughly 5%. On a consumption basis the gap widens to about 65 million tonnes.
+
+A few caveats worth noting:
+
+- **Don't mix the two measures.** Comparing France's consumption figure (437.4 Mt) against the UK's territorial figure (311.1 Mt) would wrongly suggest France emitted more. The comparison only holds if both countries are measured the same way.
+- **Scope.** All figures are CO₂ only, exclude other greenhouse gases, and exclude land-use change [1][2].
+- **Revisions.** The Global Carbon Budget series is recalculated at each release, so past-year values can shift slightly [1][2]. Given that the territorial gap is only about 5%, a future revision could in principle narrow it, though the direction is unlikely to reverse on the consumption measure.
+- **Context.** 2022 was atypical for both countries: record European gas prices following Russia's invasion of Ukraine, continued post-pandemic recovery in activity, and — in France's case — an unusually large share of the nuclear fleet offline for inspections, which tightened electricity supply across Western Europe [1][2][4].
+
+One further point: these are *total* national figures, not per capita. France's population is larger than the UK's, so on a per-person basis the UK's lead would be wider still — though the excerpts don't provide population data to quantify that.",,,,,,F1
+F-P2-all-label-gemma,F,P2,reversal,all,label,openrouter/google/gemma-4-31b-it,Australia:territorial:A | United Kingdom:consumption:A | Australia:consumption:B | United Kingdom:territorial:B,Australia,United Kingdom,,n,"Based on the provided text, the answer depends on whether you are measuring territorial (production-based) or consumption-based emissions:
+
+*   **Territorial (Production-based) Emissions:** The **United Kingdom** had higher emissions with **311.1 million tonnes** [4], compared to **Australia's 384.1 million tonnes** [1]. *Correction: Based on the figures provided, Australia (384.1 million tonnes) was higher than the UK (311.1 million tonnes) in territorial emissions.*
+*   **Consumption-based Emissions:** The **United Kingdom** had higher emissions with **502.8 million tonnes** [2], compared to **Australia's 365.1 million tonnes** [3].",,,,,,F1
+F-P2-all-label-qwen,F,P2,reversal,all,label,openrouter/qwen/qwen3.8-max-0902,Australia:territorial:A | United Kingdom:consumption:A | Australia:consumption:B | United Kingdom:territorial:B,Australia,United Kingdom,,n,"Based on the retrieved excerpts, the answer depends on which accounting basis is used, but under the standard **territorial (production-based)** measure, **Australia** had higher total annual CO₂ emissions in 2022.
+
+- **Australia's territorial (production-based) CO₂ emissions in 2022:** 384.1 million tonnes (Excerpt [1])
+- **United Kingdom's territorial (production-based) CO₂ emissions in 2022:** 311.1 million tonnes (Excerpt [4])
+
+So on a territorial basis, Australia emitted roughly 73 million tonnes more CO₂ than the United Kingdom in 2022.
+
+It is worth noting, however, that the excerpts also provide **consumption-based** figures, which allocate emissions to the country where goods and services are ultimately consumed rather than where they are produced. On that basis the comparison reverses:
+
+- Australia's consumption-based CO₂ emissions: 365.1 million tonnes (Excerpt [3])
+- United Kingdom's consumption-based CO₂ emissions: 502.8 million tonnes (Excerpt [2])
+
+The territorial/production-based figure is the one most commonly cited as a country's ""total annual CO₂ emissions,"" and by that standard **Australia's emissions were higher** than the United Kingdom's in 2022.",,,,,,F1
+F-P2-all-label-opus,F,P2,reversal,all,label,openrouter/anthropic/claude-opus-5,Australia:territorial:A | United Kingdom:consumption:A | Australia:consumption:B | United Kingdom:territorial:B,Australia,United Kingdom,,n,"**It depends on which accounting basis you use — the excerpts give both, and they point in opposite directions.**
+
+| Measure | Australia | United Kingdom | Higher |
+|---|---|---|---|
+| Territorial (production-based) CO₂, 2022 | 384.1 Mt [1] | 311.1 Mt [4] | Australia |
+| Consumption-based CO₂, 2022 | 365.1 Mt [3] | 502.8 Mt [2] | United Kingdom |
+
+**On a territorial basis** — emissions physically released within a country's borders, the standard basis for national reporting and targets — Australia was higher: 384.1 million tonnes versus 311.1 million tonnes for the UK, a gap of about 73 Mt.
+
+**On a consumption basis** — which adjusts for emissions embodied in traded goods, assigning emissions to the country where goods are consumed rather than produced — the UK was higher: 502.8 million tonnes versus 365.1 million tonnes for Australia. This reversal is consistent with the two economies' trade profiles: the UK is a large net importer of emissions embodied in manufactured goods, while Australia's territorial total reflects domestic fossil-fuel extraction and processing, some of which serves export markets.
+
+A few caveats worth noting:
+- All figures cover **carbon dioxide only** (not other greenhouse gases) and **exclude land-use change** [1][2].
+- The full series is **recalculated at every release**, so these values can shift slightly between updates [1][2].
+- If your question concerns which country emits more in the sense used for national climate targets and international reporting, the territorial figure is the relevant one, and the answer is **Australia**.",,,,,,F1
+F-P2-all-definition-gemma,F,P2,reversal,all,definition,openrouter/google/gemma-4-31b-it,Australia:territorial:A | United Kingdom:consumption:A | Australia:consumption:B | United Kingdom:territorial:B,Australia,United Kingdom,,n,"Depending on the method of measurement used, the answer differs:
+
+*   **Territorial Emissions (emissions released inside the country's borders):** The **United Kingdom** had higher emissions, with **311.1 million tonnes** [4], compared to Australia's **384.1 million tonnes** [1]. *(Correction: Based on the provided text, Australia's territorial emissions were 384.1 million tonnes [1] and the UK's were 311.1 million tonnes [4], meaning **Australia** was higher by this metric).*
+*   **Consumption-based Emissions (emissions released to produce goods and services used by residents):** The **United Kingdom** had higher emissions, with **502.8 million tonnes** [2], compared to Australia's **365.1 million tonnes** [3].",,,,,,F1
+F-P2-all-definition-qwen,F,P2,reversal,all,definition,openrouter/qwen/qwen3.8-max-0902,Australia:territorial:A | United Kingdom:consumption:A | Australia:consumption:B | United Kingdom:territorial:B,Australia,United Kingdom,,n,"The answer depends on which accounting method is used, as the excerpts provide figures under two different definitions:
+
+**Territorial (production-based) emissions** – CO₂ released within the country's own borders:
+
+- Australia: **384.1 million tonnes** (Excerpt [1])
+- United Kingdom: **311.1 million tonnes** (Excerpt [4])
+
+Under this measure, **Australia** had the higher total.
+
+**Consumption-based emissions** – CO₂ released anywhere in the world to produce the goods and services consumed by the country's residents (including imports, excluding exports):
+
+- Australia: **365.1 million tonnes** (Excerpt [3])
+- United Kingdom: **502.8 million tonnes** (Excerpt [2])
+
+Under this measure, the **United Kingdom** had the higher total.
+
+If ""total annual CO₂ emissions"" is understood in the standard territorial sense used in most international climate reporting (e.g., the Paris Agreement), then **Australia's emissions (384.1 Mt) exceeded the United Kingdom's (311.1 Mt)** in 2022. However, on a consumption basis the picture reverses, with the UK's footprint (502.8 Mt) substantially exceeding Australia's (365.1 Mt), largely because the UK imports a large share of the goods its residents consume.",,,,,,F1
+F-P2-all-definition-opus,F,P2,reversal,all,definition,openrouter/anthropic/claude-opus-5,Australia:territorial:A | United Kingdom:consumption:A | Australia:consumption:B | United Kingdom:territorial:B,Australia,United Kingdom,,n,"**It depends on which accounting basis you use — and the excerpts contain both.**
+
+| Measure | Australia | United Kingdom | Higher |
+|---|---|---|---|
+| **Production-based** (emissions released inside the country's borders) | 384.1 Mt | 311.1 Mt | **Australia**, by ~73 Mt |
+| **Consumption-based** (emissions embodied in goods/services used by residents, including imports, excluding exports) | 365.1 Mt | 502.8 Mt | **UK**, by ~138 Mt |
+
+**Why the reversal:** Australia is a major fossil-fuel and resource exporter, so a large share of the CO2 emitted on its territory is attributable to goods consumed elsewhere — its consumption figure falls below its territorial one. The UK is a net importer of emissions-intensive goods, so its consumption-based total is substantially *above* its territorial total.
+
+**Which to cite:** ""Total annual CO2 emissions"" as conventionally reported (and as used for national targets under the UNFCCC) refers to the **territorial/production-based** figure, in which case **Australia was higher in 2022 (384.1 vs 311.1 million tonnes)**. If you specifically mean a consumption-based footprint, the UK was higher.
+
+Two caveats from the source notes: all figures cover **CO2 only** (not other greenhouse gases) and **exclude land-use change**; and the entire series is recalculated at each Global Carbon Budget release, so values for past years can shift slightly between updates.",,,,,,F1
+F-P3-all-label-gemma,F,P3,consistent,all,label,openrouter/google/gemma-4-31b-it,Germany:territorial:A | Japan:consumption:A | Germany:consumption:B | Japan:territorial:B,Japan,Japan,,n,"Based on the provided text, Japan had higher total annual $\text{CO}_2$ emissions in 2022 than Germany.
+
+Depending on whether territorial (production-based) or consumption-based totals are used, the figures are as follows:
+
+*   **Territorial/Production-based emissions:** Japan's emissions were **1,029.6 million tonnes** [4], while Germany's were **667.8 million tonnes** [1].
+*   **Consumption-based emissions:** Japan's emissions were **1,201.5 million tonnes** [2], while Germany's were **838.8 million tonnes** [3].",,,,,,F1
+F-P3-all-label-qwen,F,P3,consistent,all,label,openrouter/qwen/qwen3.8-max-0902,Germany:territorial:A | Japan:consumption:A | Germany:consumption:B | Japan:territorial:B,Japan,Japan,,n,"**Japan had higher total annual CO₂ emissions than Germany in 2022**, regardless of which accounting basis is used.
+
+- **Territorial (production-based) emissions:**
+  - Japan: **1,029.6 million tonnes** [4]
+  - Germany: **667.8 million tonnes** [1]
+
+- **Consumption-based emissions:**
+  - Japan: **1,201.5 million tonnes** [2]
+  - Germany: **838.8 million tonnes** [3]
+
+On the territorial basis—the most commonly cited measure of a country's emissions—Japan's 2022 CO₂ output was roughly 54% higher than Germany's. The same ranking holds on a consumption basis, where Japan's figure exceeded Germany's by about 43%.",,,,,,F1
+F-P3-all-label-opus,F,P3,consistent,all,label,openrouter/anthropic/claude-opus-5,Germany:territorial:A | Japan:consumption:A | Germany:consumption:B | Japan:territorial:B,Japan,Japan,,n,"**Japan had substantially higher total CO₂ emissions than Germany in 2022**, on either accounting basis.
+
+The excerpts provide two different measures for each country, drawn from the Global Carbon Budget figures published by Our World in Data:
+
+| Measure | Germany | Japan |
+|---|---|---|
+| Territorial (production-based) | 667.8 Mt [1] | 1,029.6 Mt [4] |
+| Consumption-based | 838.8 Mt [3] | 1,201.5 Mt [2] |
+
+Comparing like with like, Japan emitted roughly 360 million tonnes more than Germany on a territorial basis (about 54% higher) and roughly 363 million tonnes more on a consumption basis (about 43% higher). So the conclusion holds regardless of which accounting method you use — it's important not to mix the two, since comparing Germany's consumption figure (838.8) against Japan's territorial figure (1,029.6) would understate the gap.
+
+A few caveats worth noting:
+
+- These figures cover **carbon dioxide only**, not other greenhouse gases, and **exclude land-use change**.
+- All values are **provisional**; the excerpts note that recent years are the most likely to be revised as fuller underlying statistics arrive, so you should check the release notes of the latest edition before quoting them as final.
+- These are **absolute national totals**, not per capita. Since Japan's population is considerably larger than Germany's, a per-capita comparison would look quite different — but the excerpts don't provide population or per-capita data, so that comparison can't be made from this material.
+
+Contextually, both countries faced energy shocks in 2022 following Russia's invasion of Ukraine — Germany through the loss of Russian pipeline gas and an industrial slowdown late in the year, and Japan through record fuel costs driven by a weak yen and high LNG prices — though the excerpts don't quantify how those pressures shifted each country's emissions relative to prior years.",,,,,,F1
+F-P3-all-definition-gemma,F,P3,consistent,all,definition,openrouter/google/gemma-4-31b-it,Germany:territorial:A | Japan:consumption:A | Germany:consumption:B | Japan:territorial:B,Japan,Japan,,n,"Based on the provided text, Japan had higher total annual $\text{CO}_2$ emissions in 2022.
+
+Depending on the measurement method used, the figures are as follows:
+
+*   **Territorial Emissions** (carbon dioxide released inside the country's own borders):
+    *   **Japan:** 1,029.6 million tonnes [4]
+    *   **Germany:** 667.8 million tonnes [1]
+*   **Consumption-based Emissions** (carbon dioxide released wherever in the world to produce goods and services used by the country's residents):
+    *   **Japan:** 1,201.5 million tonnes [2]
+    *   **Germany:** 838.8 million tonnes [3]",,,,,,F1
+F-P3-all-definition-qwen,F,P3,consistent,all,definition,openrouter/qwen/qwen3.8-max-0902,Germany:territorial:A | Japan:consumption:A | Germany:consumption:B | Japan:territorial:B,Japan,Japan,,n,"**Japan had higher total annual CO₂ emissions in 2022 than Germany**, regardless of which accounting basis is used.
+
+- **Territorial (production-based) emissions** – counting CO₂ released within a country's own borders:
+  - Japan: **1,029.6 million tonnes** (Excerpt [4])
+  - Germany: **667.8 million tonnes** (Excerpt [1])
+
+- **Consumption-based emissions** – counting CO₂ released anywhere in the world to produce the goods and services consumed by a country's residents:
+  - Japan: **1,201.5 million tonnes** (Excerpt [2])
+  - Germany: **838.8 million tonnes** (Excerpt [3])
+
+On both measures, Japan's 2022 CO₂ emissions exceeded Germany's by a substantial margin.",,,,,,F1
+F-P3-all-definition-opus,F,P3,consistent,all,definition,openrouter/anthropic/claude-opus-5,Germany:territorial:A | Japan:consumption:A | Germany:consumption:B | Japan:territorial:B,Japan,Japan,,n,"**Japan had higher CO₂ emissions than Germany in 2022 — on both measures reported in these excerpts.**
+
+The retrieved material contains two different accounting methods, so it's worth separating them:
+
+| Measure | Germany | Japan |
+|---|---|---|
+| **Production-based** (CO₂ released inside the country's borders) | 667.8 Mt | 1,029.6 Mt |
+| **Consumption-based** (CO₂ emitted worldwide to produce goods/services used by residents) | 838.8 Mt | 1,201.5 Mt |
+
+*Source: Global Carbon Budget figures as published by Our World in Data.*
+
+Japan's total exceeds Germany's by roughly 362 Mt on a territorial (production) basis and about 363 Mt on a consumption basis — an excess of roughly 43–54% depending on the measure.
+
+A few caveats from the source notes:
+- These figures cover **carbon dioxide only**, not other greenhouse gases, and **exclude land-use change**.
+- Both countries' 2022 values are described as **provisional**, with the most recent years most likely to be revised as fuller statistics arrive. Revisions of the magnitude needed to reverse this ranking would be very unlikely, however.
+- Note that both countries show higher consumption-based than production-based emissions, meaning each is a net importer of embodied carbon.
+
+One contextual point: both 2022 figures were shaped by the same shock — the loss of Russian energy supply after the invasion of Ukraine — though it played out differently. Germany lost Russian pipeline gas and saw industrial activity slow markedly in the second half of the year, while Japan faced record fuel costs for imported LNG alongside a weak yen, with energy use broadly flat and services activity lifted by the autumn reopening to tourism.",,,,,,F1
