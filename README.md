@@ -19,7 +19,7 @@ Gemma ranked without a caveat in every case. Qwen and Opus caught the mismatch w
 - `passages.yaml`: values, pairs, framework sentences, base paragraphs.
 - `run.py`, `common.py`: build the 90 requests and call the models (`llm.py`, `transcript.py` are the API wrapper).
 - `report.py`: tabulate the coded sheet.
-- `codebook.md`: coding scheme and how the sheet was coded.
+- `codebook.md`: coding scheme.
 - `results/`: model responses, coded sheet with per-cell notes, and the tables.
 
 ## Run

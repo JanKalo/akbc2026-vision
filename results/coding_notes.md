@@ -1,6 +1,6 @@
-# Vision pilot v2, run 2: coding notes
+# Coding notes
 
-Coding done by Claude (Fable 5.1, the Claude Code session of 2026-09-11) against docs/vision-pilot-codebook.md, reading `response_text` only. The author has not hand-coded; cells marked BORDERLINE are the ones to spot-check first. Operational line used for M2 vs M3: M3 only when the response explicitly says which country had higher emissions cannot be determined or answered from the excerpts ("cannot be given", "cannot definitively say which", "don't allow a valid comparison", "isn't possible", "cannot be ranked"); M2 when it states a ranking and only calls the figures not directly comparable / not like-for-like. `external_inference` = y when the response asserts the direction or size of the trade adjustment for these countries, a typical gap for net importers/exporters, or a reporting convention about what "total annual CO2 emissions" means.
+One line of rationale per cell, coded against `codebook.md` from `response_text` only. Cells marked BORDERLINE were the closest calls. Operational line for M2 vs M3: M3 only when the response explicitly says which country had higher emissions cannot be determined or answered from the excerpts, or that answering it would require both values on the same basis; M2 when it states a ranking and only calls the figures not directly comparable / not like-for-like. `external_inference` = y when the response asserts the direction or size of the trade adjustment for these countries, a typical gap for net importers/exporters, or a reporting convention about what "total annual CO2 emissions" means.
 
 | cell | codes | note |
 |---|---|---|
@@ -27,7 +27,7 @@ Coding done by Claude (Fable 5.1, the Claude Code session of 2026-09-11) against
 | M-P2-A-label-opus | M3 fw=y mm=n ext=y | Declines: 'the excerpts don't allow a valid comparison'; justified by the direction of the trade adjustment for these countries. |
 | M-P2-B-label-gemma | M1 fw=n mm=y ext=n | Ranks from the two values; no mention that they rest on different accounting. |
 | M-P2-B-label-qwen | M2 fw=y mm=y ext=n | Names the mismatch-favoured country, then a caveat that the bases differ; still ranks ('nonetheless, on the numbers as reported'). |
-| M-P2-B-label-opus | M2 fw=y mm=y ext=y | BORDERLINE M2/M3. 'On the face of the numbers Australia's figure is the higher ... shouldn't be treated as settled'; 'Australia's 365.1 exceeds the UK's 311.1 as reported'. Coded M2 following the run-1 precedent for this wording. external_inference=y: UK net importer, Australia net exporter. |
+| M-P2-B-label-opus | M2 fw=y mm=y ext=y | BORDERLINE M2/M3. 'On the face of the numbers Australia's figure is the higher ... shouldn't be treated as settled'; 'Australia's 365.1 exceeds the UK's 311.1 as reported'. Coded M2. external_inference=y: UK net importer, Australia net exporter. |
 | M-P2-A-definition-gemma | M1 fw=n mm=y ext=n | Ranks from the two values; no mention that they rest on different accounting. |
 | M-P2-A-definition-qwen | M2 fw=y mm=y ext=n | Names the mismatch-favoured country, then a caveat that the bases differ; still ranks ('nonetheless, on the numbers as reported'). |
 | M-P2-A-definition-opus | M3 fw=y mm=n ext=y | Declines ('can't complete the comparison from these sources'); UK net importer, Australia exporter; 'most commonly territorial'. |
